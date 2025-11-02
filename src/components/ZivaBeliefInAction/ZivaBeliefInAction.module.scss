@@ -1,0 +1,276 @@
+@import "../../styles/util";
+
+.ziva_events{
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 70px;
+    }
+    @include min(1600) {
+        --section-top-space: 128px;
+        --section-bottom-space:128px;
+    }
+    .statim_addon_img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 400px;
+        height: 350px;
+        pointer-events: none;
+        figure{
+            @include aspectRatio(400,350);
+        }
+    }
+    &.orange_bg{
+        background-color: #150F01;
+    }
+    &.dark_bg{
+        background-color: #050C1D;
+
+        @include min(1600) {
+            --section-top-space: 167px;
+            --section-bottom-space:127px;
+        }
+
+        &::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(47, 101, 166, 0.05);
+            pointer-events: none;
+        }
+        .addon_img_wrapper{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 977px;
+            height: 796px;
+            pointer-events: none;
+            z-index: 2;
+            display: none;
+        }
+        &.dark_bg{
+            background-color: #071025;
+            position: relative;
+            @include min(992) {
+                background-color: #050C1D;
+            }
+
+            @include min(1600) {
+                --section-top-space: 167px;
+                --section-bottom-space:127px;
+            }
+
+            &::before{
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(47, 101, 166, 0.05);
+                pointer-events: none;
+            }
+            .addon_img_wrapper{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 977px;
+                height: 796px;
+                pointer-events: none;
+                z-index: 1;
+                display: none;
+                @include min(992) {
+                    display: block
+                }
+                figure{
+                    @include aspectRatio(977,796);
+                    img{
+                        object-fit: contain;
+                        object-position: bottom right;
+                    }
+                }
+            }
+            .markettop{
+                .arrow_text{
+                    span{
+                        color: var(--white);
+                    }
+                    .arrow_bottom{
+                        border: 1px solid var(--white);
+                    }
+                } 
+            }
+
+            .arrow_text{
+                span{
+                    color: var(--white);
+                }
+                :global{
+                    .arrow_links{
+                        border: 1px solid var(--white);
+                        svg{
+                                fill: var(--white) !important;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .markettop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+          
+            figure{
+                @include aspectRatio(977,796);
+                img{
+                    object-fit: contain;
+                    object-position: bottom right;
+                }
+            }
+        }
+
+
+        &.fintech_sec{
+            background-color: #061F2A;
+
+            .fintech_bg_belief{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+        }
+
+        &.insurtech_sec{
+            background-color: #1B1404;
+
+            .insuretech_bg_belief{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+        }
+
+        &.retailtech_sec{
+            background-color: #0A1631;
+
+            .retailtech_bg_belief{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+        }
+
+        
+        &.digitallearning_sec{
+            background-color: #1B0E00;
+
+            .digitallearning_bg_belief{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+        }
+
+    }
+
+    .markettop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        @include min(992) {
+            padding-bottom: 45px;
+            
+            h2{
+                max-width: 60%;
+            }
+        }        
+    }
+
+    :global{
+        .row{
+            --bs-gutter-x: 53px;
+        }
+    }
+   
+    .arrow_text{
+        :global{
+            .arrow_links{
+                border: 1px solid var(--white);
+                svg{
+                    fill: var(--white) !important;
+                }
+            }
+        }
+        @include min(1200) {
+            &:hover{
+                :global{
+                    .arrow_links{
+                        border: 1px solid transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.button_wrapper{
+    &.white_theme{
+        .arrow_text{
+            :global{
+                .arrow_links{
+                    border: 1px solid var(--black);
+                    svg{
+                        fill: var(--black) !important;
+                    }
+                }
+            }
+            @include min(1200) {
+                &:hover{
+                    :global{
+                        .arrow_links{
+                            border: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.solution_btn{
+
+    span{
+        font-weight: 600;
+    }
+    :global(.btn-outline-secondary){
+        &:hover{
+            border-color: var(--white);
+            background-color: transparent;
+        }
+    }
+}

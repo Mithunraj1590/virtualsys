@@ -1,0 +1,138 @@
+@import "../../styles/util";
+
+.home_process {
+  --section-top-space: 60px;
+  --section-bottom-space: 60px;
+  background: var(--bg-color1);
+  padding: var(--section-top-space) 0 var(--section-bottom-space);
+
+  @include min(992) {
+    --section-top-space: 90px;
+    --section-bottom-space: 90px;
+  }
+
+  @include min(1600) {
+    --section-top-space: 130px;
+    --section-bottom-space: 130px;
+  }
+
+  .title_head {
+    margin-bottom: 40px;
+
+    @include min(992) {
+      margin-bottom: 60px;
+    }
+
+    @include min(1600) {
+      margin-bottom: size(80);
+    }
+  }
+
+  .steps_wrapper {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 40px;
+    justify-content: center;
+
+    @include min(768) {
+      --bs-gutter-x: 30px;
+      --bs-gutter-y: 50px;
+    }
+
+    @include min(1600) {
+      --bs-gutter-x: 40px;
+    }
+  }
+
+  .step_card {
+    @include min(992) {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
+
+  .card_wrapper {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+
+    @include min(768) {
+      padding: 40px 30px;
+    }
+
+    @include min(992) {
+      padding: 50px 25px;
+    }
+
+    @include min(1600) {
+      padding: size(60) size(40);
+    }
+
+    @include min(1200) {
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .number {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--color_blue);
+    margin-bottom: 20px;
+    line-height: 1;
+
+    @include min(768) {
+      font-size: 70px;
+    }
+
+    @include min(992) {
+      font-size: size(90);
+    }
+
+    @include min(1600) {
+      font-size: size(100);
+      margin-bottom: size(30);
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+
+    @include min(768) {
+      font-size: 22px;
+    }
+
+    @include min(992) {
+      font-size: size(24);
+      margin-bottom: 20px;
+    }
+
+    @include min(1600) {
+      font-size: size(26);
+      margin-bottom: size(25);
+    }
+  }
+
+  .text {
+    font-size: 16px;
+    color: var(--text-color3);
+    margin-bottom: 0;
+    line-height: 1.6;
+
+    @include min(992) {
+      font-size: size(18);
+    }
+
+    @include min(1600) {
+      font-size: size(20);
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@import "../../styles/util";
+
+.home_product{
+    background-color: #EAECF0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    overflow: hidden;
+    position: relative;
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+    @include min(1600) {
+        --section-top-space: 155px;
+        --section-bottom-space:140px;
+    }
+    .top_head{
+        p{
+            font-size: 18px;
+            @include min(992) {
+                font-size: size(22);
+            }
+        }
+        
+    }
+
+
+    .bottom_left_bg{
+        &:before{
+            background: radial-gradient(circle, #1B7AC7 0%, rgba(56, 60, 69, 0) 70%);
+            opacity: 0.3;
+            top: -15rem;
+            left: -20rem;
+            @include min(992) {
+                left: -15rem;
+              }
+        }
+    }
+
+    .wraper_boxes{
+        display: flex;
+        justify-content: space-between;
+        max-width: 930px;
+        margin-left: auto;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+       
+        @include min(768) {
+           align-items: flex-start;
+          }
+    }
+    .colm{
+      
+        width: 100%;
+        flex: 0 0 47%;
+        max-width: 47%;
+        @include min(768) {
+            flex: 0 0 33.33%;
+            max-width: 33.33%;
+            padding: 0 20px;
+          }
+        &.colm1{
+            margin-top: 200px;
+        }
+        &.colm2{
+            margin-top: 20px;
+        }
+        // &.colm3{
+        //     margin-top: 120px;
+        // }
+    }
+    .square_box{
+        width: 45px;
+        height: 45px;
+        border-radius: 11px;
+        background: rgba(0, 59, 253, 0.15);
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 0;
+       
+        @include min(768) {
+            margin-left: auto;
+            margin-top: 40px;
+          }
+        @include min(1200) {
+             width: 100px;
+            height: 100px;
+            border-radius: 17px;
+          }
+        &.white_box{
+            background: var(--white);
+            margin: 0;
+            margin-bottom: 20px;
+            @include min(768) {
+                margin-bottom: 40px;
+              }
+
+        }
+    }
+    
+   
+}

@@ -1,0 +1,94 @@
+@import "../../styles/util";
+
+.detailbanner{
+    &_wrap{
+        position: relative;
+        max-width: 100%;
+        margin-bottom: size(25);
+        @include min(992) {	
+            margin-bottom: size(40);
+        }
+       
+        figure{
+            @include aspectRatio(819,435);
+        }
+    }
+    .title{
+
+            font-size: 24px;
+          
+           
+            @include min(992) {	
+                font-size: size(36);
+                font-weight: 400;
+                margin-bottom: size(30);
+            }
+    }
+    .details{
+        display: flex;
+        flex-wrap: wrap;
+        p{
+            margin-right: 25px;
+            position: relative;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 500;
+            @include min(992) {	
+                font-size: 15px;
+                margin-right: 35px;	
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                right: -15px;
+                background-color: #000;
+                top: 10px;
+                border-radius: 50%;
+                @include min(992) {	
+                    right: -25px;
+                }
+            }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+            }
+            &.author{
+                
+                @include min(992) {	
+                    color: #1CB195;
+                }
+                @include max(991.98) {	
+                    display: block;
+                    width: 100%;
+                    font-size: 14px;
+                        &:after{
+                                display: none;
+                            }
+                    }
+               
+            }
+            &.category{
+                color: #1CB195;
+            }
+            &.date{
+                @include max(991.98) {	
+                    // display: block;
+                    // width: 100%;
+                    // color: #6E6E6E;
+                    // font-size: 12px;
+              
+                    // &:after{
+                    //         display: none;
+                    //     }
+                }
+            }
+
+            &:nth-last-child(1){
+                margin-right: 0;
+            }
+        }
+    }
+}

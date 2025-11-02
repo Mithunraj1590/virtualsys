@@ -1,0 +1,310 @@
+@import "../../styles/util";
+
+.brochure {
+    &_section {
+        --section-top-space: 40px;
+        --section-bottom-space: 40px;
+        background-color: var(--white);
+
+        @include min(768) {
+            --section-top-space: 80px;
+            --section-bottom-space: 100px;
+        }
+
+        @include min(1600) {
+            --section-top-space: 98px;
+            --section-bottom-space: 150px;
+        }
+    }
+
+    &_wrapper {
+        --bs-gutter-x: 20px;
+        --bs-gutter-y: 30px;
+
+        @include min(768) {
+            --bs-gutter-y: 45px;
+            --bs-gutter-x: 40px;
+        }
+    }
+
+    &_items {
+        padding: 0px;
+        height: 100%;
+
+        @include min(992) {
+            padding: 40px;
+            border: 1px solid;
+            border-image: linear-gradient(140deg, rgba(0, 0, 0, 0.5), rgba(27, 75, 232, 0.5));
+            border-image-slice: 1;
+            &:hover{
+                border-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(27, 75, 232, 0.4));
+                border-image-slice: 1;
+            }
+        }
+
+        :global {
+            .btn.btn-primary {
+                min-width: 100%;
+
+                &:hover {
+                    @include max(1199) {
+                        background-color: #F10829;
+                        color: #ffffff;
+                        border: 1px solid #F10829;
+                    }
+                }
+            }
+        }
+    }
+
+    &_title {
+        font-weight: 600;
+        font-size: 18px;
+
+        @include min(992) {
+            font-size: size(30);
+        }
+    }
+
+    &_subtitle {
+        max-width: 278px;
+
+        @include max(767) {
+            font-size: 14px;
+            max-width: 133px;
+        }
+    }
+}
+
+.img_wrapper {
+    margin-bottom: 20px;
+
+    @include min(992) {
+        max-width: 210px;
+        margin-bottom: 45px;
+    }
+
+    @include max(991) {
+        padding: 36px 20px;
+        border: 1px solid;
+        border-image: linear-gradient(140deg, rgba(0, 0, 0, 0.5), rgba(27, 75, 232, 0.5));
+        border-image-slice: 1;
+    }
+
+    figure {
+        @include aspectRatio(210, 215);
+    }
+
+
+
+}
+
+.modalform {
+    
+   :global{
+    .modal-dialog{
+    
+            --bs-modal-width:600px;
+            @include min(992){
+                --bs-modal-width:950px;
+            }
+       
+        @include min(1200){
+            --bs-modal-width:1062px;
+        }
+    }
+     .modal-content{
+        position: relative;
+        border-radius: 0;
+        border: none;
+        .modal-header{
+            padding: 0;
+            border: none;
+            .btn-close{
+                position: absolute;
+                right: 21px;
+                top: 22px;
+                padding: 5px;
+                opacity: 1;
+                z-index: 11;
+                box-shadow: none;
+                transition: all .2s ease-in-out;
+                --bs-btn-close-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.905' height='14.905' viewBox='0 0 14.905 14.905'%3E%3Cpath id='Icon_ionic-md-close' data-name='Icon ionic-md-close' d='M22.429,9.014l-1.49-1.49-5.962,5.962L9.014,7.523l-1.49,1.49,5.962,5.962L7.523,20.938l1.49,1.49,5.962-5.962,5.962,5.962,1.49-1.49-5.962-5.962Z' transform='translate(-7.523 -7.523)'/%3E%3C/svg%3E%0A");
+              
+                @include min(992){
+                    right: 31px;
+                    top: 31px;
+                    &:hover{
+                        opacity: .67;
+                    }
+                }
+            }
+        }
+        .modal-body{
+            padding: 18px;
+            padding-top: 60px;
+            padding-bottom: 40px;
+            @include min(992){
+                padding: 60px;
+                padding-top: 80px;
+                padding-bottom: 65px;
+            }
+            @include min(1200){
+                padding: 80px;
+                padding-bottom: 85px;
+            }
+            .title{
+                font-weight: 500;
+              margin-bottom: 18px;
+              font-size: 32px;
+              max-width: 310px;
+              @include min(576){
+                max-width: 100%;
+              }
+              @include min(992){
+                margin-bottom: size(35);
+                font-size: size(55);
+                font-weight: 400;
+              }
+            }
+            .content{
+                
+                border-radius: 0;
+                max-width: 450px;
+                margin: auto;
+                margin-bottom: 40px;
+                @include min(992){
+                    margin: 0;
+                }
+                p{
+                
+                    font-size: 18px;
+                    margin: 0;
+                    @include min(992){
+                        max-width: 289px;
+                        margin-bottom: 24px;
+                      }
+                }
+            }
+            .modalform{
+                max-width: 450px;
+                margin: auto;
+                @include min(992){
+                    max-width: 378px;
+                }
+                
+                .form-group{
+                        margin-bottom: 40px;
+                        position: relative;
+                    .btn{
+                        width: 100%;
+                    }
+                }
+                .form-control{
+                    border-radius: 0;
+                    background-color: #EBEBEB;
+                    border: 0;
+                    font-weight: 500;
+                    max-height: 54px;
+                    color: var(--black);
+                    padding: 13px 17px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                    resize: none;
+                    &::placeholder{
+                        color: rgba(0, 0, 0, 0.5);
+                        font-family: var(--ff-primary);
+                        font-weight: 500;
+                        font-size: size(18);
+                        transition: 0.4s ease-in-out;
+                    }
+                    &:focus{
+                        border-bottom: 1px solid #1B7AC7;
+                        &::placeholder{
+                            opacity: 0;
+                            padding-left: 10px;
+                        }
+                    }
+                    &:not(:placeholder-shown) {
+                        border-bottom: 1px solid var(--black);
+                    }
+        
+                }
+                input{
+                    &:focus{
+                        border-bottom: 1px solid #1B7AC7;
+                    }
+                }
+                .checkbox{
+                    label{
+                        opacity: 0.7;
+                        max-width: 664px;
+                        font-weight: 500;
+                        font-size: 14px;
+                        @include min(992) {
+                            font-size: 16px;
+                        } 
+                    }
+                }
+                .form-check{
+                    padding-left: 40px;
+                    .form-check-input{
+                        border-radius: 50%;
+                        width: 22px;
+                        height: 22px;
+                        border: 2px solid #7E7E7E;
+                        margin-left: -40px;
+                        box-shadow: unset;
+                        cursor: pointer;
+                        &:checked{
+                            background-color: var(--black);
+                            border: 2px solid var(--black);
+                        }
+                    }
+                }
+            }
+        }
+     }
+   }
+
+   :global{
+        .error{
+            color: red;
+            font-size: 12px;
+            position: absolute;
+            bottom: -22px;
+            left: 0px;
+            @include min(992){
+                font-size: 14px;
+            }
+        }
+
+
+        .intl-tel-input{
+            display: flex;
+            &.allow-dropdown.separate-dial-code {
+                .selected-dial-code{
+                    padding-left: 10px;
+                }
+                .selected-flag{
+                    display: flex;
+                    width: 110px;
+                }
+                input[type=tel]{
+                    padding-left: 120px;
+                }
+                .selected-dial-code,.arrow{
+                    pointer-events: none;
+                }
+            }
+        
+             .country-list{
+                width: 100%;
+            }
+          
+        }
+        
+   }
+
+
+
+}

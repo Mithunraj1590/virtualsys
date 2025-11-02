@@ -1,0 +1,87 @@
+@import "../../styles/util";
+
+.fintech_transform{
+    padding: 60px 0;
+    background-color: #041B25;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    @include min(992) {
+        padding: 90px 0;
+    } 
+    @include min(1600) {
+        padding: 108px 0 140px;
+    } 
+  
+   
+
+    h2{
+        font-size: 30px;
+        margin-bottom: 0px;
+        font-weight: 400;
+        line-height: 1.45;
+        @include min(992) {
+            max-width: 72%;
+        }
+        @include min(1600) {
+            font-size: size(50);
+        } 
+        span{
+            background: -webkit-linear-gradient( 50deg,#2EBDB9 20%, #ffffff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+    }
+
+    .contentWraper{
+        margin-bottom: 0px;
+        p{
+            font-size: 18px;
+            @include min(992){
+                font-weight: 500;
+            }
+            &:nth-last-child(1){
+                margin-bottom: 0;
+            }
+        }
+        h2{
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    &.insuretech_transform{
+        background: #0F0C00;
+        h2{
+            span{
+                background: -webkit-linear-gradient( 50deg,#FAA357 20%, #ffffff 50%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+        }
+    }
+
+    &.retailtech_transform{
+        background: #081229;
+        h2{
+            span{
+                background: -webkit-linear-gradient( 50deg,#1E53FF 20%, #ffffff 50%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+        }
+    }
+
+    &.digitallearning_transform{
+        background: #0A0501;
+        h2{
+            span{
+                background: -webkit-linear-gradient( 50deg,#E68A3E 20%, #ffffff 50%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+        }
+    }
+
+}

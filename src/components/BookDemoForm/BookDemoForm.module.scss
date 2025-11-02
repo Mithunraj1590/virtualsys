@@ -1,0 +1,192 @@
+@import "../../styles/util";
+
+.bookdemoform{
+    margin-top: 0px;
+    padding-bottom: 60px;
+    @include min(992){
+        margin-top: 0px;
+        padding-bottom: size(90);
+    }
+    :global{
+        .container{
+            
+            @include min(1600) {	
+                max-width: 1240px;
+            }
+        }
+    } 
+    .tabsection{
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        :global{
+            .nav-tabs{
+                width: 100%;
+                overflow: scroll;
+                flex-wrap: nowrap;
+                padding-bottom: 2px;
+                border: none;
+
+                @include max(575.98) {	
+                    width: calc(100% + 40px);
+                    
+                }
+
+
+                &::-webkit-scrollbar {
+                   display: none;
+                    opacity: 0;
+                    height: 0;
+                  }
+                  
+                  /* Track */
+                 & ::-webkit-scrollbar-track {
+                   display: none;
+                   opacity: 0;
+                   height: 0;
+                  }
+                  
+                  /* Handle */
+                  &::-webkit-scrollbar-thumb {
+                   display: none;
+                   opacity: 0;
+                   height: 0;
+                  }
+                  
+                @include min(992){
+                    width: 22%;
+                    flex-wrap: wrap;
+                    position: sticky;
+                    top: 100px;
+                }
+
+
+              
+                .nav-item{
+                    display: inline-block;
+                    white-space: pre;
+                  
+                    @include min(992){
+                        width: 100%;       
+                    }
+           
+                    .nav-link{
+                        width: 100%;
+                        border: none;
+                        border-radius: 0;
+                        border-bottom: 1px solid #D2D2D2;
+                        padding: 12px 13px;
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-align: left;
+                        position: relative;
+                        color: #A8A8A8;
+                        margin: 0;
+                        @include min(992){
+                            font-size: 20px;
+                            font-weight: 500;
+                            padding: 23px 0;
+                            color: #000;
+                        }
+                       
+                    
+                        &::after{
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.616' height='10.977' viewBox='0 0 22.616 10.977'%3E%3Cg id='Group_140993' data-name='Group 140993' transform='translate(0.75 1.061)'%3E%3Cg id='Group_129199' data-name='Group 129199'%3E%3Cpath id='Path_110564' data-name='Path 110564' d='M877.872,1469.136l4.555,4.339H861.621' transform='translate(-861.621 -1469.136)' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/g%3E%3Cpath id='Path_110566' data-name='Path 110566' d='M9182.021-19553.027l-4.819,4.518' transform='translate(-9161.215 19557.365)' fill='none' stroke='%23000' stroke-linecap='round' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E%0A");
+                            transform: none;
+                            background-position: center;
+                            position: absolute;
+                            width: 35px;
+                            height: 35px;
+                            top: 22px;
+                            right: 0;
+                            overflow: visible;
+                            content: "";
+                            background-repeat: no-repeat;
+                            display: none;
+                            opacity: 0;
+                            @include min(992){
+                                display: block;
+                            }
+                        }
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            height: 2px;
+                            width: 0;
+                            background-color: #000;
+                            bottom: -2px;
+                            transition: all .3s ease-in-out;
+                            @include min(992){
+                                height: 1px;   
+                                bottom: -1px;
+                            }
+                        }
+                        &.active{
+                            color: #000;
+                            @include min(992) {	
+                                font-weight: 500;
+                            }
+                            &::before{
+                                width: 100%;
+                            }
+                            &::after{
+                                opacity: 1;
+                            }
+                            @include min(992){
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+            .tab-content{
+                width: 100%;
+                @include min(992){
+                    width: 78%;
+                }
+            }
+           
+        }
+        .form_field{
+            max-width: 900px;
+            margin-left: auto;
+            @include min(992) {	
+                padding-left: 110px;
+            }
+        }
+
+   
+
+    }
+
+
+    
+    .left {
+        margin-bottom: 35px;
+        max-width: 380px;
+        .title {
+            font-size: size(38);
+            
+            line-height: 1.2;
+
+            @include min(992) {
+                font-size: size(80);
+            } 
+
+            @include min(1600) {
+                font-size: size(100);
+                margin-bottom: 0;
+            } 
+        }
+        .sub_title {
+            font-size: size(22);
+            margin-top: size(25);
+            line-height: 1.8;
+            @include min(992) {
+                margin-top: size(60);
+            } 
+        }
+    }
+
+}

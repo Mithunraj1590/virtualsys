@@ -1,0 +1,15 @@
+@import "../../../styles/util";
+
+
+.box_wrap{
+    margin-bottom: size(40);
+    .figure_wrap{
+        @include aspectRatio(397,108);
+        margin-bottom: size(42);
+
+    }
+    p{
+        max-width: 360px;
+    }
+    
+}

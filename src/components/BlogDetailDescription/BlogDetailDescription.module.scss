@@ -1,0 +1,62 @@
+@import "../../styles/util";
+
+
+
+            .description{
+                font-family: var(--primary-font-family);
+                h1,h2,h3,h4,h5,h6,p,ul,ol{
+                    padding: 0;
+                    margin: 0;
+                    color: #061319;
+                }
+                ul,ol{
+                    padding-left: 20px;
+                    list-style-type:square ;
+                }
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6{
+                    font-size: 20px;
+                    font-weight: 500;
+                    @include min(992) {	
+                        font-size: 24px;
+                    }
+                    &+p,
+                    &+ul,
+                    &+ol{
+                        margin-top: size(20);
+                    }
+                }
+                p{
+                    color: #061319;
+                    &+p,
+                    &+ul,
+                    &+ol{
+                        margin-top: size(20);
+                    }
+                  
+                }
+                ul,ol{
+                    li{
+                        color: #061319;
+                    }
+                   
+                    &+p{
+                        margin-top: size(20);
+                    }
+                }
+                ul,ol,p{
+                    &+h1,
+                    &+h2,
+                    &+h3,
+                    &+h4,
+                    &+h5,
+                    &+h6{
+                      margin-top: size(40);
+                    }
+                }
+            }
+ 

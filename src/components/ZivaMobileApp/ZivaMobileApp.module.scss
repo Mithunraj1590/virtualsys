@@ -1,0 +1,140 @@
+@import "../../styles/util";
+
+
+.ziva_mobile_app{
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+    @include min(992) {
+        padding: 90px 0;
+    } 
+    @include min(1600) {
+        padding: 117px 0 140px;
+    } 
+    .top_left_bg{
+        position: absolute;
+        width: 538px;
+        height: 691px;
+        top: 0;
+        left: 0px;
+        pointer-events: none;
+        max-width: 100%;
+        opacity: 0.2;
+        @include min(992) {
+           opacity: 1;
+        } 
+        img{
+            object-fit: contain;
+            object-position: top left;
+        }
+    }
+
+    .bottom_right_bg{
+        position: absolute;
+        width: 465px;
+        height: 493px;
+        max-width: 100%;
+        bottom: 0;
+        right: 0px;
+        pointer-events: none;
+        opacity: 0.7;
+        @include min(992) {
+            opacity: 1;
+        } 
+        img{
+            object-fit: contain;
+            object-position: bottom right;
+        }
+    }
+
+    .title{
+        max-width: 320px;
+        margin: auto;
+        margin-bottom: 30px;
+         text-align: center;
+        
+         @include min(992) {
+            text-align: left;
+            margin-left: 0;
+            max-width: 60%;
+            margin-bottom: size(80);
+        } 
+         span{
+            background: -webkit-linear-gradient( 50deg,#2EBDB9 0%, #000000 95%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+    }
+    .image_Wraper{
+        max-width: 400px;
+        margin: auto;
+        @include min(1200) {
+            margin-left: size(100);
+
+        } 
+        .image_wrap{
+            position: relative;
+            @include aspectRatio(341, 571);
+            img{
+                object-fit: contain !important;
+            }
+    
+        }
+    }
+    
+    
+
+}
+
+
+.ziva_icon_text{
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(112, 112, 112, 0.25);
+    @include min(992) {
+        margin-top: 55px;
+        padding-top: 55px;
+        padding-right: 30px;
+        max-width: 650px;
+    } 
+
+
+    &:nth-child(1){
+        border: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+   
+    figure{
+        max-width: 30px;
+        padding-bottom:35px ;
+        position: relative;
+        margin: auto;
+        margin-bottom: 15px;
+        @include min(992) {
+            margin-left: 0;
+            margin-bottom: 20px;
+        } 
+
+    }
+    .title{
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        @include min(992) {
+            font-size: size(30);
+        } 
+        
+    }
+    p{
+        line-height: 1.5;
+        color: #101010;
+        text-align: center;
+        &:nth-last-child(1){
+            margin: 0;
+        }
+        @include min(992) {
+           text-align: left;
+        } 
+    }
+}

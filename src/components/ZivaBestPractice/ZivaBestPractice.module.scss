@@ -1,0 +1,165 @@
+@import "../../styles/util";
+
+.ziva_best_practice{
+    padding: 60px 0;
+    background-color: #041B25;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    @include min(992) {
+        padding: 100px 0;
+    } 
+    @include min(1600) {
+        padding: 150px 0 120px;
+    } 
+
+    .best_practice_bg{
+        position: absolute;
+        width: 811px;
+        height: 843px;
+        right: 0;
+        top: 0;
+        pointer-events: none;
+        display: none;
+        @include min(992) {
+          display: block;
+        } 
+        img{
+            object-fit: contain;
+            object-position: top right;
+        }
+    }
+
+    .left{
+        .title{
+            font-weight: 300;
+            margin-bottom: 20px;
+            @include min(992) {
+                margin-bottom: size(60);
+            } 
+        }
+        p{
+            max-width: 560px;
+            line-height: 1.5;
+            font-size: 18px;
+        }
+    }
+
+    .right{
+        max-width: 400px;
+       
+        position: relative;
+        @include min(992) {
+            margin-left: auto;
+        } 
+
+        .value{
+            font-size: 60px;
+            @include min(992) {
+                font-size: size(96);
+            } 
+        }
+        .subtitle{
+            font-size: 23px;
+            margin-bottom: 20px;
+            @include min(992) {
+                font-size: 30px;
+                margin-bottom: 25px;
+            } 
+        }
+
+        .list_wrap{
+            padding: 0;
+            li{
+                font-size: 16px;
+                margin-bottom: 15px;
+                position: relative;
+                list-style: none;
+                padding-left: 35px;
+                @include min(992) {
+                    font-size: 24px;
+                    margin-bottom: 18px;
+                    padding-left: 48px;
+                } 
+                &:after{
+                    position: absolute;
+                    content: '';
+                    background-image: url("/images/ziva/best-arrow.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 15px;
+                    height: 8px;
+                    top: 8px;
+                    left: 0;
+                    @include min(992) {
+                        height: 10px;
+                        top: 14px;
+                        left: 0;
+                        width: 20px;
+                    } 
+                }
+            }
+        }
+    }
+
+    :global(.row) {
+        --bs-gutter-x: 47px;
+    }
+    
+
+    .mySwiper {
+        overflow: hidden;
+        padding-top: 35px;
+        @include max(991.98) {
+          overflow: visible;
+        }
+        :global(.swiper-scrollbar-horizontal) {
+          height: 20px;
+          background: transparent;
+    
+          &:after {
+            position: absolute;
+            content: "";
+            background: rgba(36, 186, 181, 0.2);
+            height: 2px;
+            width: 100%;
+            left: 0;
+            top: 10px;
+            z-index: -1;
+          }
+          :global(.swiper-scrollbar-drag) {
+            background: transparent;
+            &:after {
+              position: absolute;
+              content: "";
+              background: #24BAB6;
+              height: 2px;
+              width: 100%;
+              left: 0;
+              top: 10px;
+              z-index: 1;
+            }
+          }
+        }
+        :global{
+            .swiper-wrapper{
+                height: auto;
+                .swiper-slide{
+                    padding-bottom: 30px;
+                    height: auto;
+                    .col-lg-4{
+                        height: 100%;
+                        @include max(1200) {
+                            opacity: 1;
+                            transform: translateZ(0);
+                            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                            transition-delay: var(--anim-index);
+                            animation-delay: var(--anim-index);
+                        }
+                    }
+                }
+            }
+        }
+      }
+
+}

@@ -1,0 +1,67 @@
+@import "../../../styles/util";
+
+
+.locatecard {
+    border: 1px solid rgba($color: #707070, $alpha: .49);
+    border-radius: 24px;
+    max-width: 396px;
+    height: 100%;
+    transition: all .3s ease-in-out;
+
+    &_wrap {
+        display: flex;
+        flex-direction: column;
+        padding: 35px 24px;
+        @include min(1200){
+            padding: 55px 45px;
+        }
+
+        .title {
+            color: #000;
+            margin-bottom: 18px;
+            font-weight: 600;
+            font-size: 22px;
+            @include min(992){
+                font-size: size(24);
+                margin-bottom: size(40);
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            color: #000;
+        }
+
+        .map {
+
+            display: flex;
+            align-items: center;
+            margin-top: size(50);
+            @include min(1200){
+                margin-top: size(30);
+            }
+
+            span {
+                margin-left: 6px;
+                text-decoration: underline;
+                color: #000;
+                font-size: 15px;
+                font-weight: 500;
+                transition: 0.3s ease-in-out;
+            }
+        }
+      
+    }
+    &:hover {
+        @include min(1200){
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            .map {
+                span {
+                    color: #F48320;
+                }
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,234 @@
+@import "../../styles/util";
+
+.plugandplay {
+    background-color: #140A00;
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    position: relative;
+    overflow: hidden;
+
+    @include min(992){
+        --section-top-space: 90px;
+        --section-bottom-space: 100px;
+    }
+
+    @include min(1600){
+        --section-top-space: 130px;
+        --section-bottom-space: 180px;
+    }
+
+    .top_head{
+            @include min(768){
+                padding-bottom: size(30);   
+            }
+            @include min(1200){
+                max-width: 70%;
+                margin: auto;
+                padding-bottom: size(90);
+            }
+            @include min(1600){
+                padding-bottom: size(130);
+            }
+        .title{
+            margin-bottom: size(22);
+            @include min(1600) {
+                font-size: size(50);
+            } 
+            span{
+                background: -webkit-linear-gradient( 50deg, #FAA357, #ffffff 80%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+        }
+        .subtitle{
+            @include min(768){
+                max-width: 72%;
+                margin: auto;
+            }
+          
+            @include min(1600) {
+                font-size: size(20);
+            } 
+        }
+    }
+
+
+    &_body {
+        max-width: 1210px;
+        margin: auto;
+        position: relative;
+
+        &_png {
+            width: 100%;
+
+            // svg {
+            //     width: 100%;
+            //     height: 100%;
+            //     object-fit: contain;
+            // }
+
+        }
+
+        .gradient_mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(20, 10, 0);
+                background: -moz-linear-gradient(90deg, rgba(20, 10, 0, 1) 350%, rgba(20, 10, 0, 0.1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(20, 10, 0, 1) 36%, rgba(20, 10, 0, 0.1) 100%);
+                background: linear-gradient(90deg, rgba(20, 10, 0, 1) 35%, rgba(20, 10, 0, 0.1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#140a00", endColorstr="#140a00", GradientType=1);
+                transition: .6s transform ease-in-out, .6s opacity ease-in-out;
+            }
+        }
+
+        .gradient_mask1 {
+            left: auto;
+            right: 0;
+            transform: rotate(-180deg);
+        }
+
+        .image_wrap {
+            position: absolute;
+            width: 703px;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            top: 50%;
+
+            figure {
+                @include aspectRatio(703, 420);
+            }
+        }
+
+        .body_swap {
+            position: relative;
+            width: 322px;
+            height: 347px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 54.5%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 11;
+            @include min(1600){
+               left: 50%;
+            }
+            figure{
+                position: relative;
+            }
+            img{
+                position: relative !important;
+            }
+        }
+    }
+
+
+
+    .plugandplayMobile{
+        max-width: 260px;
+        @include min(768){
+            margin: auto; 
+        }
+            .body_swap {
+                position: relative;
+                width: 200px;
+                height: 240px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    height: 1px;
+                    width: 50%;
+                    left: 0;
+                    top: 50%;
+                    background: #ffffff;
+                    z-index: 0;
+                }
+            }  
+
+            .contentWraper{
+                position: relative;
+                &:after{
+                    position: absolute;
+                    content: "";
+                    top: 120px;
+                    left: 0;
+                    height: calc(100% - 130px);
+                    width: 1px;
+                    background-color: #ffffff;
+                }
+            }
+
+            .listWraper{
+                padding: 0;
+                margin: 0;
+                li{
+                    list-style: none;
+                    margin-bottom: 40px;
+                    font-size: 16px;
+                    position: relative;
+                    padding-left: 80px;
+                    &:nth-last-child(1){
+                        margin-bottom: 0;
+                    }
+                    &:after{
+                        position: absolute;
+                        content: '';
+                        top: 13px;
+                        left: 0;
+                        height: 1px;
+                        width: 73px;
+                        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(151,149,144,1) 20%, rgba(15,12,0,0) 100%);
+                    }
+                }
+            }
+    }
+
+}
+
+
+
+
+
+
+.plugandplay {
+    &_body {
+        tspan {
+            opacity: 0;
+            transition: .6s opacity ease-in-out;
+            transition-delay: .2s;
+        }
+
+        &:hover {
+            .gradient_mask span {
+                opacity: 0;
+                transform: translate3d(-100%, 0%, 0);
+            }
+
+            tspan {
+                opacity: 1;
+            }
+
+            
+
+        }
+    }
+
+
+}

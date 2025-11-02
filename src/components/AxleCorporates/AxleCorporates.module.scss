@@ -1,0 +1,67 @@
+@import "../../styles/util";
+
+.AxleCorporates{
+    padding: 60px 0;
+    background-color: #0A0501;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+
+    @include min(992) {
+        padding: 90px 0;
+    } 
+
+    @include min(1600) {
+        padding: 140px 0;
+    } 
+
+
+    .top_right_bg{
+        position: absolute;
+        width: 581px;
+        height: 942px;
+        right: 0px;
+        top: -500px;
+        pointer-events: none;
+        display: none;
+        @include min(992) {
+            display: block;
+        } 
+        
+        img{
+                object-fit: contain;
+                object-position: top right;
+        }  
+    }
+
+    .bottom_left_bg{
+        position: absolute;
+        width: 797px;
+        height: 797px;
+        left: -60%;
+        bottom: -50px;
+        pointer-events: none;
+        display: none;
+        @include min(992) {
+            display: block;
+        } 
+        img{
+                object-fit: contain;
+                object-position: top right;
+        }  
+    }
+
+    .title{
+        @include min(992) {
+           max-width: 80%;
+        }
+        @include min(1600) {
+                font-size: size(50);
+          }
+          span{
+            background: -webkit-linear-gradient(50deg, #FF9100, #FFFFFF 95%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+    }
+}

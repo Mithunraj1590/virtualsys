@@ -1,0 +1,187 @@
+@import "../../styles/util";
+
+
+.insuretech_section{
+    --section-top-space: 45px;
+    --section-bottom-space: 60px;
+    position: relative;
+
+    @include min(992){
+        --section-top-space: 70px;
+        --section-bottom-space: 90px;
+    }
+
+    @include min(1600){
+        --section-top-space: 90px;
+        --section-bottom-space: 130px;
+    }
+    .addon_img{
+        width: 934px;
+        height: 691px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        max-width: 100%;
+       
+            img{
+                object-fit: contain;
+                object-position: bottom right;
+            }
+    }
+    .bg_techbrew{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        img{
+            object-fit: cover;
+            object-position: top left;
+        }  
+    }
+}
+
+.header_wrapper{
+    --bs-gutter-y: 20px;
+    margin-bottom: size(30);
+    @include min(992){
+        --bs-gutter-y: 0px;
+        --bs-gutter-x: 50px;
+        margin-bottom: 60px;
+    }
+    @include min(1600){
+        --bs-gutter-x: 135px;
+        margin-bottom: size(100);
+    }
+    .title{
+        font-weight: 400;
+        max-width: 590px;
+        &.full_title{
+            max-width: 100%;
+        }
+        @include min(992){
+            max-width: 94%;
+            font-size: size(40);
+            font-weight: 500;
+        }
+        @include min(1600){
+            font-size: size(50);
+        }
+        &.full_title{
+            @include min(1600){
+                max-width: 100% ;
+                font-size: size(45);
+            }
+        }
+    }
+    .description{
+        p{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            @include min(992){
+               max-width: 95%;
+            }
+        }
+    }
+    &.product_management{
+        .title{
+            max-width: 100%;
+        }
+    }
+}
+
+.content_wrapper{
+    --bs-gutter-y: 30px;
+    @include min(992){
+        --bs-gutter-y: 0px;
+        --bs-gutter-x: 50px;
+    }
+    @include min(1025){
+        --bs-gutter-x: 80px;
+    }
+    &:global(.flex-lg-row-reverse){
+        :global(.ziva_img_wrapper){
+            @include min(992){
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.digitallearning_gradient{
+    background: #FCF7F4;
+
+    .addon_img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        max-width: 100%;
+       
+            img{
+                object-fit: cover;
+                object-position: top left;
+            }
+    }
+}
+
+.immersivetech_section{
+    .content_wrapper{
+        align-items: flex-end;
+    }
+
+    .header_wrapper{
+        @include min(1200){
+            --bs-gutter-x: 60px;
+        }
+
+        .description{
+            p{
+                @include min(992){
+                   max-width: 88%;
+                   margin-left: auto;
+                }
+            }
+        }
+
+        .title{
+            span{
+                background: -webkit-linear-gradient(50deg, #2A5BFE, #000000 70%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    .addon_img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        max-width: 100%;
+        display: none;
+        @include min(992) {	
+            display: block;
+        }
+       
+            img{
+                object-fit: cover;
+                object-position: top left;
+            }
+    }
+
+}
+
+
+.techbrew_section{
+    background-color: #081229;
+    @include min(1600) {
+       padding-top: 150px;
+    }
+}

@@ -1,0 +1,118 @@
+@import "../../../styles/util";
+
+.update_card{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    max-width: 702px;
+    height: 100%;
+    z-index: 1;
+    
+    .figure_wrap{
+        position: relative;
+        @include aspectRatio(702,458);
+        height: 100%;
+       
+        img{
+            object-fit: cover;
+            transition: 0.6s  ease-in-out;
+            
+        }
+       
+    }
+   .title{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 15px  20px;
+        color: var(--white);
+        @include min(992) {
+            padding: 30px 45px;
+          }
+        .title_head{
+            max-width: 231px;
+            font-size: 16px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-height: 1.4;
+            @include min(992) {
+                font-size: size(30);
+                max-width: 519px;
+              }
+              @include min(1600) {
+                font-size: size(36);
+              }
+        }
+        span{
+            font-size: 11px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: block;
+            @include min(992) {
+                font-size: 15px;
+                margin-bottom: 15px;
+              }
+        }
+   }
+
+   .update_title{
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 22px;
+        padding: 4px 15px;
+        font-size: 11px;
+        font-weight: 500;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        z-index: 1;
+        color: var(--color-darkgreen);
+        @include min(992) {
+            left: 45px;
+            top: 35px;
+            font-size: 14px;
+            padding: 8px 20px; 
+          }
+   }
+
+   &:hover{
+    @include min(1200) {
+      img{
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+     }
+    
+}
+
+
+//    .hover_wrap{
+//     padding: 42px 46px;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     background-color: var(--bg-light);
+//     transform: translatey(60px);
+//     opacity: 0;
+//     transition:  0.2s ease-in-out;
+    
+
+//         p{
+//             color: var(--text-color2);
+//             font-weight: 500;
+//         }
+//         h4{
+//             color: var(--black);
+//         }
+
+//    }
+//    &:hover{
+//     .hover_wrap{
+//         opacity: 1;
+//         transform: translatey(0px);
+//         transition:  0.5s ease-in-out;
+//     }
+//    }
+}

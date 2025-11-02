@@ -1,0 +1,274 @@
+@import "../../../styles/util";
+
+.right_news_card{
+    position: relative;
+    display: flex;
+    overflow: hidden;   
+    justify-content: space-between;
+    margin-left: auto;
+    z-index: 1;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-direction: row-reverse;
+    @include min(992) {
+        margin-bottom: size(48);
+        padding: 0;
+        border-bottom:0;
+        flex-direction: inherit;
+        max-width: 505px;
+        justify-content: flex-end;
+      }
+    &:nth-last-child(1){
+        margin-bottom: 0;
+    }
+    .figure_left{
+        flex: 0 0 38%;
+        max-width: 30%;
+        @include min(992) {
+            margin-right: size(44);
+            max-width: 38%;
+          }
+    }
+    .figure_wrap{
+        position: relative;
+        max-width: 194px;
+        @include aspectRatio(194,118);
+        height: auto;
+        overflow: hidden;
+        @include min(992) {
+            height: 100%;
+          }
+
+        img{
+            object-fit: cover;
+            transition: 0.6s ease-in-out;
+        }
+    }
+    span{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        font-weight: 500;
+        margin-right: 18px;
+
+        &.category{
+            color: #00B195;
+        }
+    }
+    h4{
+        color: var(--white);
+        max-width: 261px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 16px;
+        line-height: 1.4;
+        @include min(992) {
+            font-size: size(19);
+          }
+    }
+    .date{
+        @include max(991.98) {
+           font-size: 14px;
+          }
+    }
+    .right_cont_wrap{
+        position: relative;
+        border-bottom: 0px;
+        max-width: 50%;
+        @include min(992) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+            max-width: 100%;
+          }
+        &:after{
+            position: absolute;
+            content: '';
+            height: 1px;
+            background: var(--border-color);
+            width: 0%;
+            bottom: -1px;
+            left: 0;
+            transition: 0.3s ease-in-out;
+
+        }
+    }
+
+    &:hover{
+        @include min(1200) {
+        
+        .right_cont_wrap{
+            &:after{
+                background: linear-gradient(45deg, #003BFF, #ffffff);
+                width: 100%;
+            }
+        }
+        img{
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        
+    }
+    }
+
+    &:nth-last-child(1){
+        @include max(991.98) {
+           display: none;
+      }
+    }
+
+    &.blogpage{
+        
+        @include min(992) {
+            margin-bottom: size(53);
+        }
+
+        @include max(991.98) {
+            flex-direction: initial;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            align-items: center;
+            &:nth-last-child(1){
+                display: flex;
+                border-bottom:0;
+            }
+
+            .figure_left{
+                flex: 0 0 46%;
+                max-width: 46%;
+                .figure_wrap{
+                    height: 100%;
+                    max-width: 100%;
+                }
+            }
+            span{
+                font-size: 12px;
+            }
+        }
+        h4{
+            color: var(--black);
+        }
+        span{
+            color: #6E6E6E;
+    
+            &.category{
+                color: #00B195;
+                
+                @include min(1200){
+                    display: inline-block;
+                }
+            }
+        }
+
+        .right_cont_wrap{
+            @include min(992) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                max-width: 100%;
+              }
+            &:after{
+                background: var(--black);
+            }
+        }
+    }
+
+    &.blogdetailspage{
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+
+        
+        @include max(991.98) {
+            flex-direction: initial;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            align-items: center;
+            margin-bottom: 0;
+            &:nth-last-child(1){
+                display: flex;
+            }
+
+            .figure_left{
+                flex: 0 0 46%;
+                max-width: 46%;
+                .figure_wrap{
+                    height: 100%;
+                    max-width: 100%;
+                }
+            }
+            span{
+                font-size: 12px;
+            }
+        }
+        
+        &:after{
+            position: absolute;
+            content: '';
+            height: 1px;
+            background: var(--black);
+            width: 0%;
+            bottom: 0px;
+            left: 0;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        &:hover{
+            @include min(1200) {	
+                &:after{
+                    width: 100%;
+                }
+            }
+        }
+
+        @include min(992) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+        }
+        h4{
+            color: var(--black);
+            -webkit-line-clamp: 2;
+            
+            @include min(992) {	
+                margin-bottom: 0;
+                -webkit-line-clamp: 3;
+            }
+            @include min(1600) {
+                padding-right: 20px;
+                font-size: 17px;
+            }
+        }
+        .title{
+            margin-top: 15px !important;
+        }
+        span{
+            color: #6E6E6E;
+            display: block;
+            @include min(992) {	
+                margin-bottom: 0px;
+                display: inline-block;
+            }
+    
+            &.category{
+                color: #00B195;
+            }
+        }
+
+        .right_cont_wrap{
+            &:after{
+                display: none;
+            }
+        }
+
+
+          
+
+
+        .figure_left{
+            @include min(992) {
+                margin-right: size(44);
+                max-width: 42%;
+                flex: 0 0 42%;
+              }
+            @include min(992) {
+                margin-right: size(30);
+              }
+        }
+
+    }
+ 
+}

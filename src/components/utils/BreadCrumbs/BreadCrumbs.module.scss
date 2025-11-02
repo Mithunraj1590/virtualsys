@@ -1,0 +1,82 @@
+@import "../../../styles/util";
+
+.breadcrumbs_wrap{
+  //   @include max(991.98) {
+  //     display: none;
+  // }
+  a{
+    color: #ADADAD;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    @include min(992) {
+        font-size: 14px;
+     } 
+     &:hover{
+      color: var(--black);
+     }
+  }
+  :global{
+    .breadcrumb{
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+    .breadcrumb-item{
+        display: flex;
+        // align-items: center;
+        @include max(992) {
+          padding-left: 2px;
+        } 
+        &:nth-last-child(1){
+            a{
+                color: #000000;
+            }
+        }
+        + .breadcrumb-item::before{
+            content: "" /* rtl: var(--bs-breadcrumb-divider, ">") */;
+            font-size: 18px;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6.361' height='11.66' viewBox='0 0 6.361 11.66'%3E%3Cg id='Group_132792' data-name='Group 132792' transform='translate(-2.103 24.791) rotate(-90)'%3E%3Cpath id='Path_110726' data-name='Path 110726' d='M0,0,5.3,5.3,0,10.6' transform='translate(24.261 2.633) rotate(90)' fill='none' stroke='%23adadae' stroke-linejoin='bevel' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E%0A");
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            background-position: center;
+            background-size: contain;
+            margin-top: 5px;
+            @include min(992) {
+              width: 12px;
+              height: 12px;
+              margin-right: 8px;
+              margin-top: 6px;
+            } 
+        }
+
+
+
+    }
+    
+  }
+  .bottomicon{
+    margin-top: 2px;
+    max-width: 12px;
+    @include min(992) {
+      margin-top: 3px;
+      max-width: 15px;
+    }
+  }
+
+  
+}
+
+
+.linkclose{
+  pointer-events: none;
+}
+
+
+.bread_wrap{
+  display: flex;
+}

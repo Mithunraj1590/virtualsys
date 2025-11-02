@@ -1,0 +1,99 @@
+
+
+
+@import "../../styles/util";
+
+.fintech_organization_section{
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    background-color: #Ffffff;
+    position: relative;
+    @include min(768){
+        --section-top-space: 90px;
+        --section-bottom-space: 50px; 
+    }
+    @include min(1600){
+        --section-top-space: 130px;
+        --section-bottom-space: 100px; 
+    }
+
+    .top_img{
+        position: absolute;
+        width: 2656px;
+        height: 744px;
+        right: -70%;
+        bottom: -400px;
+        pointer-events: none;
+    
+        @include min(992){
+            right: -22%;
+            bottom: -300px; 
+        }
+        img{
+            object-position: bottom center;
+            object-fit: cover;
+        }
+    }
+
+}
+
+.features_wrapper{
+    --bs-gutter-y: 35px;
+   
+    @include min(991){
+        --bs-gutter-x: 40px;
+        --bs-gutter-y: 50px;
+    }
+    .features_card{
+        div{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            
+        }
+        @include max(767.98) {
+            &:nth-last-child(2){
+                div{
+                    border-bottom: 0;
+                    
+                }
+            }
+        }
+        // &:nth-child(1){
+        //     div{
+        //         border-top: 0px solid rgba(0, 0, 0, 0.2);
+        //     }
+        // }
+        // @include min(768){
+        //     &:nth-child(2){
+        //         div{
+        //             border-top: 0px solid rgba(0, 0, 0, 0.2);
+        //         }
+        //     }
+        // }
+        // @include min(992){
+        //     &:nth-child(3){
+        //         div{
+        //             border-top: 0px solid rgba(0, 0, 0, 0.2);
+        //         }
+        //     }
+        // }
+    }
+   
+}
+
+.button_wrapper{
+    :global(.btn){
+        border: 1px solid var(--black);
+        background: transparent;
+        color: #000;
+
+        span{
+            font-weight: 600;
+        }
+        &:hover{
+            color: #000;
+            background: transparent;
+            border-color:#000;
+        }
+    }
+
+}

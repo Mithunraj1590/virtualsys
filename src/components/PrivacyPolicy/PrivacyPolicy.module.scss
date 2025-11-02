@@ -1,0 +1,298 @@
+@import "../../styles/util";
+
+.disclaimer {
+    --section-top-space: 40px;
+    --section-bottom-space: 60px;
+    position: relative;
+    @include min(768) {
+        --section-top-space: 50px;
+        --section-bottom-space: 80px;
+    }
+
+    @include min(992) {
+        --section-top-space: 70px;
+        --section-bottom-space: 70px;
+    }
+
+    @include min(1600) {
+        --section-top-space: 100px;
+        --section-bottom-space: 100px;
+        min-height: 80vh;
+    }
+
+    .sm_container {
+        max-width: 896px;
+        margin: auto;
+
+    }
+
+    .title {
+        font-size: 30px;
+        margin-bottom: 28px;
+        font-family: var(--ff-secondary);
+        max-width: 350px;
+        @include min(992){
+            font-size: size(50);
+            margin-bottom: 40px;
+            max-width: 100%;
+        }
+    }
+
+    .animate{
+        opacity: 0;
+        transform: translate3d(0,30px, 0);
+        &.inview{
+            opacity: 1;
+            transform: translateZ(0);
+            transition: opacity .6s ease-out, transform .6s ease-out;
+        }
+    }
+    
+
+    .details {
+        :global {
+
+            /* =====     Unordered List Items     ===== */
+            ul,
+            ol,
+            li ,p{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            h1,h2,h3,h4,h5,h6 {
+                margin: 0;
+                font-size: 20px;
+                font-family: var(--ff-secondary);
+                color: var(--heading-color);
+                @include max(992){
+                    font-weight: 600;
+                   
+                }
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+               
+                &+p,
+                &+ul,
+                &+ol {
+                    margin-bottom: 0;
+                    margin-top: 16px;
+
+                    @include min(992) {
+                        margin-top: size(20);
+                    }
+                }
+            }
+
+            p+p {
+                margin-top: 15px;
+
+                @include min(992) {
+                    margin-top: size(20);
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--black);
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    @include min(992) {
+                        color: var(--hover-green);
+                    }
+                }
+            }
+
+            p {
+                font-size: 16px;
+                color: var(--para-color);
+                @include min(992){
+                    color: var(--black);   
+                }
+                &+h1,
+                &+h2,
+                &+h3,
+                &+h4,
+                &+h5,
+                &+h6,
+                &+ul,
+                &+ol {
+                    margin-top: 35px;
+
+                    @include min(992) {
+                        margin-top: size(56);
+                    }
+                }
+            }
+
+            ul {
+                display: block;
+                margin: size(24) 0 size(10);
+                padding-left: size(20);
+
+                li {
+                    display: block;
+                    line-height: 1.4;
+                    padding-left: size(22);
+                    position: relative;
+
+                    &+li {
+                        margin-top: size(10);
+                    }
+
+                    &:before {
+
+                        border: none;
+
+                        content: '';
+                        display: block;
+                        height: size(10);
+                        left: 0;
+                        position: absolute;
+                        top: size(6);
+                        width: size(10);
+                    }
+
+                    @include max(1199) {
+                        padding-left: size(20);
+
+                        &+li {
+                            margin-top: size(10);
+                        }
+
+                        &:before {
+                            height: size(8);
+                            width: size(8);
+                        }
+                    }
+
+                    @include max(767) {
+                        padding-left: size(15);
+
+                        &:before {
+                            height: size(7);
+                            width: size(7);
+                        }
+                    }
+                }
+
+                &.white {
+                    li {
+                        &:before {}
+                    }
+                }
+            }
+
+            /* =====     Ordered List Items     ===== */
+            ol {
+                margin: size(24) 0 size(10);
+                counter-reset: item;
+
+                li {
+                    display: block;
+                    line-height: 1.4;
+                    padding-left: size(20);
+                    position: relative;
+
+                    &+li {
+                        margin-top: size(15);
+                    }
+
+                    &:before {
+                        content: counters(item, ".") ".";
+                        counter-increment: item;
+                        display: inline-block;
+                        left: 0;
+                        position: absolute;
+                    }
+                }
+
+                &.lower-alpha {
+                    li {
+                        &:before {
+                            content: counters(item, "", lower-alpha)")";
+                        }
+                    }
+                }
+
+                &.lower-roman {
+                    li {
+                        &:before {
+                            content: counters(item, "", lower-roman)")";
+                        }
+                    }
+                }
+
+                &.roman-sub {
+                    li {
+                        padding-left: size(30);
+
+                        &:before {
+                            content: counters(item, ".", upper-roman)".";
+                            counter-increment: item;
+                            font-weight: 500;
+                        }
+
+                        ol {
+                            li {
+                                padding-left: size(32);
+                            }
+                        }
+                    }
+                }
+
+                &.decimal-sub {
+                    li {
+                        padding-left: size(30);
+
+                        &:before {
+                            content: counters(item, ". ", decimal)".";
+                            counter-increment: item;
+                            font-weight: 500;
+                        }
+
+                        ol {
+                            padding-top: size(5);
+
+                            li {
+                                padding-left: size(32);
+                            }
+
+                            ol {
+                                li {
+                                    padding-left: size(50);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ul,
+            ol {
+
+                &+h2,
+                &+h3,
+                &+h4,
+                &+h5,
+                &+h6 {
+                    margin-top: size(30);
+                }
+
+                &+p {
+                    margin-top: size(20) !important;
+                }
+            }
+        }
+
+    }
+
+}

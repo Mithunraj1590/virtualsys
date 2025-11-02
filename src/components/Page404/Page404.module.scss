@@ -1,0 +1,43 @@
+@import "../../styles/util";
+
+
+.page404{
+
+    overflow: hidden;
+    background-image: url(/images/page404.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    background-color: #0A1631;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc( 100vh - 70px);
+    @include min(1600) {
+        padding: 150px 0;
+    }
+
+    .page404Wrap{
+       .title{
+        font-size: size(150);
+        font-weight: 700;
+        @include min(768) {
+            font-size: size(220);
+        }
+
+       }
+       .subtitle{
+            font-size: size(30);
+            font-weight: 400;
+            @include min(768) {
+                font-size: size(90);
+            }
+       }
+       p{
+            font-size: size(20);
+            font-weight: 300;
+            line-height: 1.5;
+       }
+
+    }
+}

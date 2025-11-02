@@ -1,0 +1,84 @@
+@import "../../styles/util";
+
+.component_section{
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    @include min(992){
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+    @include min(1600){
+        --section-top-space: 135px;
+        --section-bottom-space: 135px;
+    }
+    .addon_img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        figure{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img{
+                object-fit: cover;
+                transition: 2s cubic-bezier(.8,0,0,1);
+                @include max(991.98){
+                    object-position: left;
+                }
+
+                
+            }
+         
+        }
+    }
+    .title{
+        font-size: 30px;
+        @include lineHeight(30,44);
+        margin-bottom: 40px;
+        font-weight: 400;
+        @include min(992){
+            font-size: size(40);
+            @include lineHeight(55,76);
+            margin-bottom: size(90);
+        }
+        @include min(1600){
+            font-size: size(55);
+        }
+    }
+}
+.segment{
+    &_wrapper{
+        --bs-gutter-y: 55px;
+        @include min(768){
+            --bs-gutter-y: 90px;
+        }
+        @include min(1024){
+            --bs-gutter-y: 120px;
+        }
+
+        img{
+            transition: 0.3s cubic-bezier(.8,0,0,1);
+            &:hover{
+                @include min(1200) {
+                    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
+                }
+            }
+        }
+      
+    }
+    &_title{
+        font-size: 22px;
+        font-weight: 400;
+        margin-top: size(30);
+        @include lineHeight(22,30);
+        @include min(992){
+            font-size: size(24);
+            @include lineHeight(24,33);
+            max-width: 85%;
+        }
+    }
+}

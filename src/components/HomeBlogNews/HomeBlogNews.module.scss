@@ -1,0 +1,80 @@
+@import "../../styles/util";
+
+.home_blog_news{
+    --section-top-space: 50px;
+    --section-bottom-space: 20px;
+    background-color: var(--footerbg);
+    overflow: hidden;
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+    @include min(1600) {
+        --section-top-space: 150px;
+        --section-bottom-space:120px;
+    }
+
+
+    .title{
+        color: #fff;
+    }
+    .markettop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        @include min(992) {
+            padding-bottom: 40px;
+          }
+        
+      }
+
+      .top_right_bg{
+        &:before{
+            top: -25rem;
+            left: auto;
+            right: -15rem;
+            background: radial-gradient(circle, #fff 0%, rgba(56, 60, 69, 0) 70%);
+            z-index: 0;
+            @include max(991.98) {
+              display: none;
+            }
+        }
+      }
+      .top_left2_bg{
+        &:before{
+            top: -3rem;
+            left: -20rem;
+            background: radial-gradient(circle, #0035E6 0%, rgba(56, 60, 69, 0) 70%);
+            opacity: 0.3;
+            z-index: 0;
+              @include max(991.98) {
+                    top: 5rem;
+                    height: 500px;
+                    width: 500px;
+                    opacity: 0.6;
+              }
+        }
+      }
+      .top_left1_bg{
+        &:before{
+            top: -10.111111rem;
+            left: -15rem;
+            background: radial-gradient(circle, #00D1B1 0%, rgba(56, 60, 69, 0) 70%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.3;
+            z-index: 0;
+            @include max(991.98) {
+                height: 400px;
+                width: 400px;
+                top: 0;
+                opacity: 0.2;
+          }
+        
+        }
+      }
+}

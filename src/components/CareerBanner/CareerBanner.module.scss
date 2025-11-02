@@ -1,0 +1,236 @@
+@import "../../styles/util";
+
+.careerbanner {
+    background-color: var(--career-banner);
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    overflow: hidden;
+    position: relative;
+
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+
+    @include min(1600) {
+        --section-top-space: 165px;
+        --section-bottom-space: 165px;
+    }
+
+    .top_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+
+        img {
+            object-fit: cover;
+            object-position: 20% 50%;
+        }
+    }
+
+    .head {
+        color: #fff;
+        text-align: center;
+        @include min(1200) {
+            max-width: 600px;
+            margin: auto;
+           
+        }
+
+        .title {
+            margin-bottom: size(25);
+
+            @include min(1600) {
+                font-size: size(55)
+            }
+        }
+
+        p {
+            font-size: 16px;
+           
+            @include min(992) {	
+                font-size: size(22);	
+                opacity: 0.8;
+            }
+        }
+
+        a , button{
+            margin-top: size(20);
+            min-width: 207px;
+           
+        }
+    }
+    figure{
+        overflow: hidden;
+        img{
+            transform: scale(1.5);  
+           
+        }
+    }
+   
+
+    .image {
+        &_wrap {
+            width: 100%;
+            position: relative;
+
+            @include min(992) {
+                margin-top: size(80);
+            }
+
+            :global(.row) {
+                align-items: baseline;
+                --bs-gutter-x: 36px
+            }
+        }
+
+      
+
+
+        &_box {
+
+            &_inner {
+                max-width: 197px;
+                position: relative;
+                margin-bottom: 20px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                figure {
+                    @include aspectRatio(197, 122);
+                    overflow: hidden;
+                  
+                }
+            }
+        }
+
+        &_lgbox {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            &_inner {
+                max-width: 28%;
+                flex: 0 0 28%;
+                position: relative;
+
+                figure {
+                    @include aspectRatio(249, 324);
+                }
+            }
+
+            &_innerlg {
+                max-width: 37%;
+                flex: 0 0 37%;
+                position: relative;
+
+                figure {
+                    @include aspectRatio(326, 383);
+                }
+            }
+        }
+    }
+
+    &.aboutpage {
+        background: #F3F3F3;
+        --section-bottom-space: 65px;
+
+        @include min(1600) {
+            --section-top-space: 120px;
+        }
+
+        .head {
+            color: #000000;
+
+            @include min(1200) {
+                max-width: 760px;
+                margin: auto;
+            }
+
+            .title {
+                @include min(1600) {
+                    font-size: size(50)
+                }
+            }
+
+        }
+
+        .image {
+            &_wrap {
+                @include min(1200) {
+                    margin-top: size(100);
+                }
+            }
+        }
+    }
+
+    :global(.visible){
+        figure{
+            img{
+                transform: scale(1);
+                transition: transform 1.5s cubic-bezier(.8,0,0,1);
+            }
+        }
+    }
+    //--------------mobile------------------------>
+
+    
+}
+
+.mobile_wraper {
+    margin: 35px 0;
+    @include min(576){
+        padding-top: 30px;
+    }
+    :global(.row) {
+        align-items: center;
+        --bs-gutter-x: 13px;
+    }
+
+    .mobile_box_inner {
+        width: 100%;
+        margin: auto;
+        figure {
+            @include aspectRatio(91, 118);
+            margin-bottom: 13px;
+           
+        }
+    }
+
+    .mobile_lgbox_inner {
+        width: 100%;
+        margin: auto;
+        figure {
+            @include aspectRatio(95, 140);
+            margin-bottom: 13px;
+          
+        }
+    }
+}
+.bottom_button{
+    width: 100%;
+    text-align: center;
+}
+.mobile_button{
+    
+    @include max(575.98){
+        width: 100%;
+        padding: 15px;
+    }
+   
+}
+
+
+.images_grid{
+    min-height: 300px;
+    @include min(1200) {
+        min-height: 400px;
+    }
+}

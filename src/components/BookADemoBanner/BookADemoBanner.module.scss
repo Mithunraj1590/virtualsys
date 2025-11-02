@@ -1,0 +1,66 @@
+@import "../../styles/util";
+
+.bookdemo{
+    :global{
+        .container{
+            @include min(1600) {	
+                max-width: 1240px;
+            }
+        }
+    }
+    .title{
+        font-size: size(32);
+        color: #000;
+        margin-top: 20px;
+        @include min(992){
+            color: #fff;
+            font-size: size(45);
+        }
+    }
+    &_banner{
+        width: 100%;
+        height: 264px;
+        position: relative;
+        margin-top: 30px;
+        display: none;
+        overflow: hidden;
+        @include min(992){
+            display: block;
+        }
+        &_head{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 2;
+            
+        }
+        figure{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin-bottom: 0;
+          &::after{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: .31);
+          }
+          img{
+            transform: scale(1.4);  
+          }
+        }
+
+        &:global(.visible){
+            figure{
+                img{
+                    transform: scale(1); 
+                    transition: 2s cubic-bezier(.8,0,0,1); 
+                }
+            }
+        }
+    }
+}

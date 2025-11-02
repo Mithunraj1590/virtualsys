@@ -1,0 +1,296 @@
+@import "../../styles/util";
+
+.axle_know_more_section {
+  padding: 60px 0;
+  background-color: #0a0501;
+  position: relative;
+  overflow: hidden;
+  @include min(992) {
+    padding: 90px 0;
+  } 
+  @include min(1600) {
+    padding: 125px 0 115px;
+  } 
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(202, 61, 0, 0.05);
+    pointer-events: none;
+  }
+
+  :global {
+    .btn-download {
+      transition: 0.3s ease-in-out;
+      svg {
+        path {
+           fill: #de6203;
+        }
+      }
+      &:hover{
+        background: #ffffff;
+        color: #de6203;
+      }
+    }
+  }
+
+  &.kazito_page {
+    background-color: #050c1d;
+    overflow: hidden;
+    .know_more_img_1 {
+      position: absolute;
+      width: 1460px;
+      height: 1460px;
+      bottom: 200px;
+      left: calc((50% - (1460px / 2)));
+      pointer-events: none;
+      figure {
+        @include aspectRatio(1460, 1460);
+      }
+    }
+    .know_more_img_2 {
+      position: absolute;
+      width: 1406px;
+      height: 1406px;
+      top: calc((50% - (1406px / 2)));
+      left: -40%;
+      pointer-events: none;
+      figure {
+        @include aspectRatio(1406, 1406);
+      }
+    }
+    &::before {
+      display: none;
+    }
+    :global {
+      .btn-download {
+        svg {
+          path {
+            fill: #0f5bb7;
+          }
+        }
+        &:hover{
+          color: #0f5bb7;
+        }
+      }
+    }
+
+    .title {
+      max-width: 720px;
+      font-size: 30px;
+      @include min(992) {
+        font-size: size(40);
+        max-width: 94%;
+      }
+      @include min(1600) {
+        font-size: size(55);
+      }
+    }
+  }
+
+
+  :global{
+    .btn{
+      min-height: 47px;
+      display: block;
+      margin-top: 20px;
+      @include min(992) {
+        display: inline-block;
+        margin-top: 0px;
+    } 
+
+    }
+  }
+
+  .top_left_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 809px;
+    height: 576px;
+    max-width: 809px;
+    pointer-events: none;
+    @include max(991.98) {
+      display: none;
+    }
+    figure {
+      @include aspectRatio(809, 576);
+    }
+  }
+  .bottom_right_img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 1132px;
+    width: 1132px;
+    height: 598px;
+    pointer-events: none;
+    @include max(991.98) {
+      display: none;
+    }
+    figure {
+      @include aspectRatio(1132, 598);
+    }
+  }
+
+  .statim_bottom_right_img {
+    position: absolute;
+    bottom: -300px;
+    right: -320px;
+    max-width: 827px;
+    width: 827px;
+    height: 827px;
+    pointer-events: none;
+    figure {
+      @include aspectRatio(827, 827);
+    }
+    &.inner_page{
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      figure{
+        @include aspectRatio(300,300);
+      }
+    }
+  }
+
+  &.ziva_know_more {
+    background-color: #041B25;
+    &::before {
+      background-color: rgba(0, 178, 172, 0.1);
+    }
+    :global {
+      .btn-download {
+        svg {
+          path {
+            fill: #27a3a0;
+          }
+        }
+
+        &:hover{
+          color: #27a3a0;
+        }
+      }
+    }
+
+    .title {
+      max-width: 597px;
+      @include min(992) {
+        max-width: 72%;
+      }
+   
+      span {
+        background: -webkit-linear-gradient(50deg, #2ebdb9, #ffffff 95%);
+        -webkit-background-clip: text;
+      }
+    }
+  }
+
+  &.statim_know_more {
+    background-color: #0f0c00;
+
+    .know_more_wrapper {
+      .title {
+        max-width: 700px;
+        font-size: 30px;
+        @include min(992){
+          font-size: size(40);
+      }
+        @include min(1600){
+            font-size: size(55);
+        }
+
+      }
+    }
+
+    :global {
+      .btn-download {
+        svg {
+          path {
+            fill: #eda647;
+          }
+        }
+        &:hover{
+          color: #eda647;
+        }
+      }
+    }
+  }
+
+  :global(.flex-row-reverse) {
+    .img_wrapper {
+      margin-left: 0;
+    }
+  }
+}
+
+.know_more_wrapper {
+  --bs-gutter-x: 50px;
+  @include max(767) {
+    --bs-gutter-x: 0px;
+  }
+  .img_wrapper {
+    max-width: 417px;
+    height: 100%;
+    margin-left: 0;
+    @include min-max(576,1023){
+      margin-left: auto !important;
+      margin-right: auto;
+    }
+    @include min(992) {
+      margin-left: auto;
+    } 
+    figure {
+      @include aspectRatio(417, 510);
+    }
+
+    img{
+      transform: scale(1.1); 
+      filter: brightness(0.5);
+    }
+    &:global(.visible){
+        img{
+          transform: scale(1);  
+          filter: brightness(1);
+          transition: 2s cubic-bezier(.8,0,0,1);
+        }  
+    }
+  }
+}
+
+.title {
+  font-size: 30px;
+  color: #ffffff;
+  @include lineHeight(50, 68);
+  font-weight: 400;
+  @include min(992) {
+    font-size: size(40);
+  }
+  @include min(1600) {
+    font-size: size(50);
+  }
+}
+.btn_wrapper {
+  margin-top: size(54);
+  column-gap: 35px;
+  @include max(767.98) {
+     max-width: 240px;
+     margin-left: auto;
+     margin-right: auto;
+  } 
+
+  @include max(575.98) {
+        max-width: 100%;
+  }
+  :global {
+    .btn-axle:not(.btn_statim) {
+      @include min(1200) {
+        min-width: 270px;
+    } 
+    }
+  }
+}

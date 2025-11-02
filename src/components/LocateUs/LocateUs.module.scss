@@ -1,0 +1,132 @@
+@import "../../styles/util";
+
+.locateus{
+    --section-top-space: 0px;
+    --section-bottom-space: 50px;
+    position: relative;
+    overflow: hidden;
+
+    @include min(992){
+        --section-top-space: 0px;
+        --section-bottom-space: 100px;
+    }
+
+    @include min(1600){
+        --section-top-space: 0px;
+        --section-bottom-space: 120px;
+    }
+    .BreadCrumbs_wrap{
+        margin-bottom: size(42);
+        @include min(768){
+            margin-bottom: size(60);
+        }
+
+        @include min(1200){
+            margin-bottom: size(90);
+        }
+    }
+    :global{
+        .row{
+            --bs-gutter-x:20px;
+            --bs-gutter-y:20px;
+
+            @include min(768){
+                --bs-gutter-x:50px;
+                --bs-gutter-y:50px;
+            }
+
+            @include min(1200){
+                --bs-gutter-x:88px;
+                --bs-gutter-y:88px;
+            }
+        }
+       
+        .nav-tabs{
+            width: 100%;
+            margin-bottom: size(35);
+            @include min(1200){
+                margin-bottom: size(80);
+            }
+            @include max(576){
+                display: flex;
+                flex-wrap: nowrap;
+                overflow: auto;
+                &::-webkit-scrollbar{
+                    height: 0;
+                    width: 0;
+                    display: none; 
+                }
+            }
+
+             .nav-item{
+                
+                text-align: center;
+                @include min(576){
+                    width: 25%;  
+                }
+                .nav-link{
+                    width: 100%;
+                    border: none;
+                    border-bottom: 2px solid #D2D2D2;
+                    padding: 8px 20px;
+                    color: #A8A8A8;
+                    font-size: 18px;
+                    font-weight: 500;
+                    transition: all .2s ease-in-out;
+                    height: 100%;
+                    line-height: 1.2;
+                    white-space: pre;
+                    @include min(768){
+                        border-bottom: 3px solid #D2D2D2;
+                        padding-bottom: size(35);
+                        color: #000;
+                        font-size: 18px;
+                    }
+                    @include min(1200){
+                        font-size: size(30);
+                    }
+                    &.active{
+                        border-bottom: 2px solid #000;
+                        font-weight: 500;
+                        color: #000;
+                        background-color: transparent;
+                        @include min(768){
+                            border-bottom: 3px solid #000;
+                        }
+                    }
+                    &:hover{
+                        font-weight: 500; 
+                    }
+
+                    span{
+                        @include max(991.98){
+                            display: none; 
+                        }
+                    }
+
+               
+                }
+
+                @include max(576){
+                    &:nth-child(1){
+                        .nav-link{
+                            padding-left: 0;
+                        }
+                    }
+                }
+
+             }
+        }
+    }
+    .kazito_bottom_right_bg{
+        pointer-events: none;
+       position: absolute;
+        width: 1362px;
+        margin: auto;
+        height: 457px;
+        bottom: 0;
+        z-index: -1;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+}

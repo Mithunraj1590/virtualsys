@@ -1,0 +1,165 @@
+@import "../../styles/util";
+
+.FintechEcosystem {
+  padding: 25px 0 ;
+  position: relative;
+  overflow: hidden;
+  @include min(992) {
+    padding: 70px 0 20px;
+  }
+
+  .top_heading {
+    @include min(992) {
+      max-width: 88%;
+      margin: auto;
+    }
+    .title {
+      font-weight: 400;
+      @include min(992) {
+        margin-bottom: size(50);
+      }
+      @include min(1600) {
+        font-size: size(50);
+      }
+
+      span {
+        background: -webkit-linear-gradient(50deg, #2ebdb9, #000000 95%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  :global(.row) {
+    --bs-gutter-x: 47px;
+  }
+
+  .mySwiper {
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    @include max(991.98) {
+      overflow: visible;
+    }
+    :global(.swiper-scrollbar-horizontal) {
+      height: 20px;
+      background: transparent;
+
+      &:after {
+        position: absolute;
+        content: "";
+        background: rgba(36, 186, 181, 0.2);
+        height: 2px;
+        width: 100%;
+        left: 0;
+        top: 10px;
+        z-index: -1;
+      }
+      :global(.swiper-scrollbar-drag) {
+        background: transparent;
+        &:after {
+          position: absolute;
+          content: "";
+          background: #24bab6;
+          height: 2px;
+          width: 100%;
+          left: 0;
+          top: 10px;
+          z-index: 1;
+        }
+      }
+    }
+    :global {
+      .swiper-wrapper {
+        height: auto;
+        .swiper-slide {
+          padding-bottom: 30px;
+          height: auto;
+          .col-lg-4 {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.column {
+  &_wrapper {
+    @include min(1200) {
+      --bs-gutter-x: 53px;
+    }
+
+    @include max(991.98) {
+      --bs-gutter-x: 20px;
+      --bs-gutter-y: 20px;
+    }
+  }
+  &_item {
+    @include max(1200) {
+      opacity: 1;
+      transform: translateZ(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition-delay: var(--anim-index);
+      animation-delay: var(--anim-index);
+    }
+    &_inner {
+      border: 1px solid;
+      border-image: linear-gradient(140deg, #004cf6, #00c7bf);
+      border-image-slice: 1;
+      padding: 30px;
+      min-height: 300px;
+      box-shadow: 0px 6px 12px rgba(0, 79, 113, 5%);
+      @include max(991.98){
+          background-color: #ffffff;
+      }
+
+      .img_wrapper {
+        max-width: 45px;
+      }
+    }
+  }
+  &_title {
+    font-size: size(30);
+    color: #000000;
+    margin-bottom: 0;
+    max-width: 50%;
+  }
+}
+
+.ecosystem_bg1 {
+  position: absolute;
+  width: 450px;
+  height: 744px;
+  left: -100px;
+  top: -12rem;
+  max-width: 100%;
+  pointer-events: none;
+  
+  @include min(992){
+    top: -20rem;
+    left: 0;
+  }
+  img {
+    object-fit: contain;
+    object-position: left;
+  }
+}
+
+.ecosystem_bg2 {
+  position: absolute;
+  width: 666px;
+  height: 780px;
+  top: -10rem;
+  pointer-events: none;
+  right: 0;
+  max-width: 100%;
+  display: none;
+  @include min(992){
+    display: block;
+  }
+  img {
+    object-fit: contain;
+    object-position: right;
+  }
+}

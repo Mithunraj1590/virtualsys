@@ -1,0 +1,99 @@
+@import "../../styles/util";
+
+.ins_op{
+    background-color: var(--bg-color4);
+    overflow: hidden;
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    overflow: hidden;
+    @include min(992) {
+        --section-top-space: 80px;
+        --section-bottom-space: 80px;
+    }
+    @include min(1600) {
+        --section-top-space: 100px;
+        --section-bottom-space:130px;
+    }
+
+    &_head{
+        margin-bottom: size(50);
+        @include min(1600){
+            margin-bottom: size(100);
+        }
+        .title{
+            margin-bottom: 20px;
+            @include min(992){
+                margin-bottom: 0;
+            }
+            @include min(1600){
+                font-size: size(50)
+            }
+        }
+        p{
+         margin-bottom: 0;
+         font-size: 18px;
+          @include min(992){
+            max-width: 595px;
+            margin-left: auto;
+            font-size: size(22)
+          }
+        }
+    }
+    :global(.row) {
+        --bs-gutter-x: 47px;
+    }
+  
+    &_body{
+      
+        .mySwiper {
+            overflow: hidden;
+            
+            @include max(991.98) {
+              overflow: visible;
+            }
+            :global(.swiper-scrollbar-horizontal) {
+              height: 20px;
+              background: transparent;
+              bottom: 0;
+              &:after {
+                position: absolute;
+                content: "";
+                background: rgba(230, 138, 62, 0.2);
+                height: 2px;
+                width: 100%;
+                left: 0;
+                top: 10px;
+                z-index: -1;
+              }
+              :global(.swiper-scrollbar-drag) {
+                background: transparent;
+                &:after {
+                  position: absolute;
+                  content: "";
+                  background: #E68A3E;
+                  height: 2px;
+                  width: 100%;
+                  left: 0;
+                  top: 10px;
+                  z-index: 1;
+                }
+              }
+            }
+            :global{
+                .swiper-wrapper{
+                    height: auto;
+                    .swiper-slide{
+                        padding-bottom: 50px;
+                        @include min(1200){
+                            padding: 0;
+                        }
+                        height: auto;
+                        .col-lg-4{
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+          }
+    }
+}

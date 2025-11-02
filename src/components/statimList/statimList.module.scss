@@ -1,0 +1,99 @@
+@import "../../styles/util";
+
+.statim_list_section{
+    --section-top-space: 60px;
+    --section-bottom-space: 40px;
+    @include min(992){
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+    @include min(1600){
+        --section-top-space: 120px;
+        --section-bottom-space: 118px;
+    }
+    &.dark_theme{
+        background-color: #0F0C00;
+    }
+    .addon_img{
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        figure{
+            @include aspectRatio(300,300);
+        }
+    }
+}
+.content_wrapper{
+    --bs-gutter-y: 40px;
+    @include min(992){
+        --bs-gutter-y: 0px;
+    }
+    .title{
+        font-size: 30px;
+        font-weight: 400;
+        @include lineHeight(30,41);
+        @include min(992){
+            font-size: size(40);
+            @include lineHeight(55,76);
+        }
+        @include min(1600){
+            font-size: size(55);
+        }
+        @include max(576){
+            max-width: 340px;
+        }
+    }
+    .content{
+        font-size: 20px;
+        font-weight: 400;
+        @include lineHeight(20,30);
+        margin-top: 30px;
+        max-width: 430px;
+        @include min(992){
+            margin-top: 40px;
+            font-size: size(24);
+            @include lineHeight(24,38);
+            max-width: 78%;
+        }
+    }
+
+    .list_wrapper{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.features_list{
+    max-width: 100%;
+    flex: 0 0 100%;
+    @include min(1200){
+        // column-count: 2;
+        column-gap: 25px;
+        flex: 0 0 46%;
+        margin-top: -30px;
+    }
+    @include min(1600){
+        column-gap: 45px;
+    }
+    &_item{
+        font-size: 18px;
+        font-weight: 500;
+        @include lineHeight(18,30);
+        padding: 30px 0;
+        padding-left: 25px;
+        border-bottom: 1px solid #e3e3e333;
+        @include min(1024){
+            @include lineHeight(18,35);
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 43px;
+            width: 6px;
+            height: 6px;
+            background-color: #E68A3E;
+        }
+    }
+}

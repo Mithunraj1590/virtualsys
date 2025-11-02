@@ -1,0 +1,103 @@
+@import "../../styles/util";
+
+.we_werve {
+    --section-top-space: 60px;
+    --section-bottom-space: 40px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(/images/solutions/background1.png);
+    background-position: right;
+    background-color: #0B1631;
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+    @include min(1600) {
+        --section-top-space: 130px;
+        --section-bottom-space:130px;
+    }
+    .title {
+        text-align: center;
+         margin-bottom: 15px;
+         line-height: 1.4;
+         color: var(--white);
+         @include min(992){
+            margin-bottom: size(50);
+         }
+        @include min(1600) {
+            font-size: size(50);
+            margin-bottom: size(80);
+        }
+        span{
+            background: -webkit-linear-gradient( 50deg,#2A5BFE, #FFFFFF 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+    }
+
+    .boxWrapper{
+        @include min(768){
+            --bs-gutter-x:40px;
+        }
+    }
+
+    .card {
+        display: flex; 
+        align-items: center;
+        padding: 35px 0;
+        flex-wrap: wrap;
+        text-align: center;
+        height: 100%;
+        align-items: baseline;
+        flex-direction: column;
+        @include min(992){
+            flex-wrap: nowrap;
+            text-align: left;
+            height: auto;
+            border-bottom: 1px solid rgba($color: #ffffff, $alpha: .25);
+            flex-direction: row;
+            align-items: center;
+        }
+        .image_wrapper {
+            margin-bottom: 15px;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            @include min(992){
+                margin: 0;
+                width: auto;
+                height: auto;
+                margin-right: 30px;
+            }
+          
+
+            .image_box {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                margin-bottom: 0;
+                margin: auto;
+                @include min(992){
+                    margin: 0;
+                }
+            }
+        }
+
+        &_title {
+          
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0 auto;
+            color: var(--white);
+       
+            @include min(992){
+                margin: 0;
+                font-size: 18px;
+            }
+            @include min(1600){
+                font-size: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,162 @@
+@import "../../styles/util";
+
+.perfect_solutions{
+    --section-top-space: 60px;
+    --section-bottom-space: 40px;
+    background-color: #050C1D;
+    overflow: hidden;
+    position: relative;
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 90px;
+    }
+    @include min(1600) {
+        --section-top-space: 130px;
+        --section-bottom-space: 130px;
+    }
+    .glow_img_wrapper{
+        position: absolute;
+        width: 890px;
+        height: 875px;
+        top: 40px;
+        right: 0px;
+        z-index: 0;
+        pointer-events: none;
+        @include min(992) {
+            right: 270px;
+        }
+        figure{
+            @include aspectRatio(890,875);
+        }
+    }
+    .glow_img_wrapper_2{
+        position: absolute;
+        width: 410px;
+        height: 460px;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        display: none;
+        figure{
+            @include aspectRatio(410,460);
+        }
+        @include min(992) {
+           display: block;
+        }
+    }
+    .glow_img_wrapper_3{
+        position: absolute;
+        width: 473px;
+        height: 473px;
+        right: 90px;
+        top: 20px;
+        pointer-events: none;
+        figure{
+            @include aspectRatio(473,473);
+        }
+    }
+}
+
+.contents_wrapper{
+    .title{
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 0;
+    }
+}
+
+.img_section{
+    position: relative;
+    max-width: 260px;
+    z-index: 1;
+    padding-top: size(60);
+    @include min(992) {
+        padding-top: 0;
+        max-width: 464px;
+    }
+    .triangle_img{
+        position: absolute;
+        height: 565px;
+        width: 305px;
+        right: -150px;
+        top: -20px;
+        display: none;
+        figure{
+            @include aspectRatio(305,565);
+        }
+        @include min(992) {
+            display: block;
+        }
+    }
+
+    &:global(.visible){
+        .img_wrapper{
+            img{
+                transform: scale(1);
+                transition: 2s cubic-bezier(.8,0,0,1);
+            }
+        }
+    }
+}
+.img_wrapper{
+ 
+    mask-image: url(/images/statim/statim-mask-img11.png);
+    mask-size: 90%;
+    mask-repeat: no-repeat;
+    mask-position: 30% 30%;
+    figure{
+        @include aspectRatio(464,590);
+        img{
+            object-fit: cover;
+            object-position: 0 100%;
+            transform: scale(1.5);  
+           
+        }
+    }
+}
+.features_list{
+    margin-top: size(30);
+    padding-left: 0;
+    list-style: none;
+    // column-gap: 40px;
+    max-width: 662px;
+    @include min(768) {
+        // column-count: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: size(60);
+    }
+
+    &_item{
+        color: var(--white);
+        font-size: 18px;
+        font-weight: 500;
+        @include lineHeight(18,30);
+        padding: 25px 0;
+        border-bottom: 1px solid #303030;
+        padding-left: 25px;
+        position: relative;
+        @include min(768) {
+            flex:0 0  45%;
+            max-width: 45%;
+            padding-left: 33px;
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: var(--white);
+            top: 37px;
+            left: 0;
+        }
+        &:nth-last-child(1){
+            @include max(767.98) {
+                border-bottom: 0px;
+            }
+          
+        }
+    }
+    
+}

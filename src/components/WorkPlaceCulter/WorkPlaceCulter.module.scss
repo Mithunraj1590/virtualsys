@@ -1,0 +1,81 @@
+@import "../../styles/util";
+
+.culture{
+    background-color: var(--footerbg);
+    background-image: url(/images/about/culture-grad.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    --section-top-space: 60px;
+    --section-bottom-space: 60px;
+    @include min(992) {
+        --section-top-space: 90px;
+        --section-bottom-space: 70px;
+    }
+    @include min(1600) {
+        --section-top-space: 135px;
+        --section-bottom-space:140px;
+    }
+    .title{
+        @include min(1600){
+            font-size: 50px;
+        }
+    }
+    &_body{
+        margin-top: 41px;
+            @include min(992){
+                margin-top: size(80);
+            }
+           
+        .img_wrapper{
+            max-width: 468px;
+            position: relative;
+            figure{
+                @include aspectRatio(468,590);
+                overflow: hidden;
+                img{
+                    transform: scale(1.3);  
+                    
+                }
+            }
+            &:global(.visible){
+                figure{
+                    img{
+                        transform: scale(1);  
+                        transition: 2s cubic-bezier(.8,0,0,1);
+                    }
+                }
+            }
+        }
+        .content_wraper{
+            max-width: 628px;
+            margin-top: 40px;
+            @include min(992){
+                padding-left: size(50);
+                margin-top: 0px;
+            }
+            p{
+               margin: 0;
+               font-size: 16px;
+               @include min(992){
+                font-size: 18px;
+               }
+            }
+            p+p{
+                margin-top: 20px;
+            }
+            h3,h4,h5,h6{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 1.65;
+                @include min(992){
+                    font-size: size(24);
+                    margin-bottom: 40px;
+                    line-height: 1.6;
+                }
+                &+p{
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}

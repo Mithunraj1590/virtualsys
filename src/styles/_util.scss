@@ -1,0 +1,213 @@
+//colors
+
+$primary: #F10829;
+//fonts
+$primary-font: var(--bs-body-font-family);
+$base-size: 18;
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@mixin min-max($resMin, $resMax) {
+  @media (min-width: $resMin+px) and (max-width: $resMax+px) {
+    @content;
+  }
+}
+
+@mixin max($res) {
+  @media (max-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin min($res) {
+  @media (min-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin lineHeight($font, $line) {
+  line-height: calc($line/$font);
+}
+
+@mixin hover{
+  &:hover{
+    @content;
+  }
+}
+
+@mixin lineClamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin aspectRatio($w, $h) {
+  padding-bottom: calc(($h / $w) * 100%);
+  position: relative;
+  margin-bottom: 0;
+  &>img,
+  &>picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+
+// headings
+$h-sizes: (
+  1: (
+    null: 40,
+    992: 45,
+    1200: 64,
+    1600: 80,
+  ),
+  2: (
+    null: 30,
+    992: 34,
+    1200: 40,
+    1600: 55,
+  ),
+  3: (
+    null: 28,
+    992: 35,
+    1200: 45,
+  ),
+  4: (
+    null: 24,
+    992: 30,
+    1200: 40,
+  ),
+  5: (
+    null: 18,
+    768: 24,
+    1200: 30,
+  ),
+  6: (
+    null: 16,
+    992: 18,
+  ),
+);
+
+// paragraphs
+$p-sizes: (
+  
+13: (
+  null: 18,
+  768: 19,
+  1200: 13,
+),
+17: (
+    null: 18,
+    1200: 17,
+  ),
+  18: (
+    null: 18,
+  ),
+  20: (
+    null: 14,
+    768: 20,
+    1200: 20,
+  ),
+  24: (
+    null: 16,
+    768: 24,
+  )
+);
+
+
+
+
+// headings
+$h-ttl: (
+  120: (
+    null: 40,
+    992: 45,
+    1200: 64,
+    1600: 120,
+  ),
+  60: (
+    null: 40,
+    992: 45,
+    1200: 64,
+    1600: 60,
+  ),
+  50: (
+    null: 30,
+    992: 34,
+    1200: 50,
+    1600: 50,
+  ),
+  30: (
+    null: 24,
+    992: 34,
+    1200: 40,
+    1600: 30,
+  ),
+  19: (
+    null: 28,
+    992: 35,
+    1200: 19,
+  )
+);
+
+
+
+// font sizes
+@each $level, $size in $h-sizes {
+  .h#{$level} {
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      } @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+
+
+@each $level, $size in $h-ttl {
+  .ttl-#{$level} {
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      } @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+
+
+
+@each $level, $size in $p-sizes {
+  .fs-#{$level} {
+    @each $bp, $fs in $size {
+      @if ($bp == null) {
+        font-size: size($fs);
+      } @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+

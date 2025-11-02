@@ -1,0 +1,105 @@
+@import "../../styles/util";
+
+.home_valuable{
+    --section-top-space: 50px;
+    --section-bottom-space: 50px;
+    background: transparent;
+    overflow: hidden;
+    @include min(992) {
+        --section-top-space: 80px;
+        --section-bottom-space: 80px;
+    }
+    @include min(1600) {
+        --section-top-space: 120px;
+        --section-bottom-space:120px;
+    }
+
+    .top_head{
+        max-width: 900px;
+        margin: auto;
+        color: var(--black);
+        position: relative;
+        z-index: 2;
+        p{
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 0;
+            @include min(992) {
+                font-size: size(22);
+                margin-bottom: 15px;
+              }
+        }
+        .title{
+            font-weight: 400;
+            span{
+                @include max(991.98) {
+                    -webkit-text-fill-color: inherit;
+                  }
+            }
+        }
+    }
+
+    // .value_wrap{
+    //     display: flex;
+    //     position: relative;
+    //     z-index: 1;
+    //     .box_wrap{
+    //         flex: 0 0 50%;
+    //         max-width: 50%;
+    //         @include min(767.98) {
+    //             flex: 0 0 33.33%;
+    //             max-width: 33.33%;
+    //           }
+    //         @include min(992) {
+    //                 flex: 0 0 20%;
+    //                 max-width: 20%;
+    //           }
+    //         .value_figure{
+    //             position: relative;
+    //             width: 160px;
+    //             max-width: 100%;
+    //             height: 80px;
+    //             display: flex;
+    //             align-items: center;
+    //             justify-content: center;
+    //             margin: auto;
+    //             margin-top: size(60);
+    //               @include min(1200) {
+    //                 margin-top: size(110);
+    //               }
+    //             img{
+    //                 position: relative !important;
+    //                 height: auto !important;
+    //                 width: auto !important;
+    //             }
+    //             // .valuehover1{
+    //             //     display: none;
+    //             // }
+    //             // &:hover{
+    //             //     .value1{
+    //             //         display: none;
+    //             //     }
+    //             //     .valuehover1{
+    //             //         display: block;
+    //             //     }
+    //             // }
+    //         }
+    //     }
+    // }
+
+    .top_center_bg{
+        &::before{
+            background: radial-gradient(circle, #1B7AC7 0%, rgba(56, 60, 69, 0) 70%);
+            opacity: 0.3;
+            left: calc( 50% - 380px);
+            top: -10rem;
+            z-index: 0;
+            @include min(992) {
+                top: -8rem;
+              }
+        }
+    }
+
+
+}
+

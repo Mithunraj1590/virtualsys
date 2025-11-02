@@ -1,0 +1,141 @@
+@import "../../styles/util";
+
+
+.about_management {
+    --section-top-space: 20px;
+    --section-bottom-space: 30px;
+    position: relative;
+  
+    @include min(992) {
+      --section-top-space: 70px;
+      --section-bottom-space: 70px;
+    }
+
+    :global(.container){
+        @include min(1600){
+            max-width: 1224px;
+        }
+    }
+
+
+    .title_head{
+      font-size: 18px;
+      line-height: 1.5;
+      @include min(992) {
+          font-size: size(20);
+      } 
+      @include min(1600) {
+          font-size: size(24);    
+      }
+    }
+
+  
+    .image_wrap {
+  
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      cursor: pointer;
+  
+      @include min(768) {
+        max-width: 50%;
+      }
+  
+      @include min(992) {
+        max-width: 84%;
+      }
+  
+      .shape_figure {
+        @include aspectRatio(482,547);
+        overflow: hidden;
+        background-image: url("/images/leadership/team_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+  
+        img{
+          transition: 0.3s ease-in-out;
+          width: 100%;
+          object-position: bottom;
+          object-fit: cover;
+          transform-origin: bottom;
+
+        }
+       
+      }
+      
+
+      &:hover{
+        @include min(1200) {
+            img{
+                transform: scale(0.97);
+                filter: drop-shadow(8px 2px 5px rgba(0, 0, 0, 0.2));
+            } 
+        }
+        
+      }
+  
+    }
+
+  
+    .managementWrap{
+        padding: 25px 0;
+        align-items: center;
+        @include min(768) {
+          padding: 35px 0;
+        }
+        .cont_box{
+          max-width: 736px;
+        }
+        // .title{
+        //     font-size: 30px;
+        // }
+       
+        .subtitle{
+            font-size: 16px;
+            color: #5C5C5C;
+            @include min(992){
+                font-size: 18px;
+            }
+        }
+        &:nth-child(odd){
+            @include min(992){
+                flex-direction: row-reverse;
+
+                .image_wrap {
+                    margin-left: auto;
+                }
+            }
+        }
+
+      
+
+
+    }
+
+    .arrow_text{
+        cursor: pointer;
+        span{
+            color: var(--black);
+        }
+        .arrow_bottom{
+            border-color: var(--black);
+            svg{
+                fill: var(--black)  !important;
+            }
+        }
+        &:hover{
+            @include min(1200){
+                .arrow_bottom{
+                    border-color: var(--white);
+                    svg{
+                        fill: var(--white)  !important;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+  
+  }

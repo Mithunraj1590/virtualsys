@@ -1,0 +1,263 @@
+@import "../../../styles/util";
+
+.accordion_wrapper{
+    :global{
+        .accordion{
+            --bs-accordion-border-color: transparent;
+            --bs-accordion-border-radius: 0px;
+            --bs-accordion-inner-border-radius: 0px;
+            --bs-accordion-bg: transparent;
+            @include min(1024){
+                margin-top: -20px;
+            }
+            &::-webkit-scrollbar{
+                width: 4px;
+                height: 4px;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: #218B88;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: #218b8838;
+            }
+            .accordion-item{
+                border-top: unset;
+                border-right: unset;
+                border-left: unset;
+                --bs-accordion-border-width: 1px;
+                --bs-accordion-border-color: rgba(255, 255, 255, 0.2);
+                .accordion-header{
+                    .accordion-button{
+                        --bs-accordion-border-color: transparent;
+                        --bs-accordion-btn-focus-border-color: transparent;
+                        --bs-accordion-btn-focus-box-shadow: unset;
+                        --bs-accordion-btn-padding-x: 0px;
+                        --bs-accordion-btn-padding-y: 25px;
+                        font-size: 20px;
+                        @include min(768){
+                            font-size: size(24);
+                        }
+                        @include min(992){
+                            --bs-accordion-btn-padding-y: 30px;
+                        }
+                        span{
+                            font-size: 15px;
+                            font-weight: 400;
+                            height: 20px;
+                            display: block;
+                            margin-right: 15px;
+                            margin-top: 4px;
+                            transition: 0.3s ease-in-out;
+                            @include min(992){
+                                margin-right: 50px;
+                                margin-top: 5px;
+                            }
+                        }
+                        &::after{
+                            background-image: unset;
+                            width: 16px;
+                            height: 2px;
+                            transform: rotate(90deg);
+                            opacity: 1;
+                            --bs-accordion-btn-icon-transition: transform 0.2s, opacity 0.2s ease-in-out;
+                        }
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            margin-left: auto;
+                            width: 16px;
+                            height: 2px;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%) rotate(0deg);
+                        }
+                        &:focus{
+                            box-shadow: unset;
+                        }
+                        &:not(.collapsed){
+                            --bs-accordion-active-bg: transparent;
+                            &::after{
+                                background-image: unset;
+                                background-color: var(--white);
+                                --bs-accordion-btn-icon-width: 16px;
+                                height: 1px;
+                                transform: rotate(0deg);
+                                opacity: 0;
+                            }
+                        }
+                    }
+                    &.text-black{
+                        .accordion-button{
+                            --bs-accordion-btn-color: var(--black);
+                            --bs-accordion-active-color: var(--black);
+                            
+                            &::before{
+                                background-color: var(--black);
+                            }
+                            &::after{
+                                background-color: var(--black);
+                            }
+                        }
+                    }
+                    &.text-white{
+                        .accordion-button{
+                            --bs-accordion-btn-color: var(--white);
+                            --bs-accordion-active-color: var(--white);
+                            &::before{
+                                background-color: var(--white);
+                            }
+                            &::after{
+                                background-color: var(--white);
+                            }
+                        }
+                    }
+                }
+                .accordion-collapse{
+                    .accordion-body{
+                        --bs-accordion-body-padding-x: 35px;
+                        --bs-accordion-body-padding-y: 25px;
+                        // padding-right: 0;
+                        padding-top: 0;
+                        @include min(1024){
+                            --bs-accordion-body-padding-x: 70px;
+                            --bs-accordion-body-padding-y: 30px;
+                            padding-top: 0;
+                            // padding-right: 0;
+                        }
+                        figure{
+                            margin: 0;
+                        }
+                        &.text-white{
+                            ul{
+                                li{
+                                    &:after{
+                                        background-color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.show{
+                        position: relative;
+                        &:after{
+                            position: absolute;
+                            content: '';
+                            background: var(--white);
+                            height: 1px;
+                            width: 100%;
+                            left: 0;
+                            bottom: -1px;
+                        }
+                    }
+                }
+
+            
+
+                ul{
+                    padding-left: 20px;
+                    li{
+                            position: relative;
+                            margin-bottom: 20px;
+                            list-style: none;
+                            @include min(992){
+                                font-weight: 500;
+                            }
+                            &::after{
+                                position: absolute;
+                                content: '';
+                                width: 4px;
+                                height: 4px;
+                                left: -20px;
+                                top: 10px;
+                                background: #000000;
+                                @include min(992){
+                                    width: 6px;
+                                    height: 6px;
+                                }
+                            }
+                    }
+                }
+
+                &:hover{
+                    @include min(1200) {
+                        .accordion-header{
+                            .accordion-button{
+                                span{
+                                    margin-right: 40px;
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+
+    .accordionHeader{
+        padding-right: 40px;
+        line-height: 1.5;
+    }
+
+    &.collection_management{
+        :global{
+            .accordion {
+                @include min(992){
+                    padding-right: 30px;
+                    // max-height: 600px;
+                    // overflow: hidden;
+                    // overflow-y: auto;
+                }
+                .accordion-item{
+                    border-bottom: 1px solid rgba(112, 112, 112, 0.4);
+                    @include min(992){
+                        max-width: 578px;
+                    }
+                    .accordion-collapse{
+                        &.show{
+                            &:after{
+                                background: #878787;
+                            }
+                        }
+                    } 
+
+                    
+
+                }
+            }
+        }
+    }
+
+    &.axle_accordian{
+        :global{
+            .accordion {
+                .accordion-item{
+                    border-bottom: 1px solid rgba(112, 112, 112, 0.25);
+                    @include min(992){
+                        max-width: 664px;
+                    }
+                    .accordion-collapse{
+                        &.show{
+                            &:after{
+                                background: #000000;
+                            }
+                        }
+                    } 
+                    .accordion-body{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+
+
+    
+    .accordion_content{
+        font-size: 16px;
+        font-weight: 400;
+        @include lineHeight(16,24);
+        @include min(1024){
+            font-size: size(18);
+        }
+    }
+}
