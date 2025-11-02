@@ -38,6 +38,7 @@
 
             .shape_figure {
                 @include aspectRatio(414, 500);
+                overflow: hidden;
                 margin-bottom: 0;
                 img{
                     transform: scale(1.5);  

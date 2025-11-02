@@ -82,7 +82,7 @@ const Footer = ({ props, footer_bgcolour }) => {
                             src={props?.logo?.image?.url}
                             fill
                             sizes=""
-                            alt="Novac Logo"
+                            alt="Virtual Sys Logo"
                           />
                         </figure>
                       </Link>

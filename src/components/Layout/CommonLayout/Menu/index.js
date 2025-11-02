@@ -191,7 +191,7 @@ const Menu = ({ props }) => {
                     priority={true}
                     fill
                     sizes="(max-width: 768px) 100vw"
-                    alt="Novac logo"
+                    alt="Virtual Sys logo"
                     quality={100}
                   />
                 </div>

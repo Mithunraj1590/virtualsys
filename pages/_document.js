@@ -5,8 +5,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
 
-          {/* <title>NovacTech: Digital Transformation Company, Cloud Solutions Company</title> */}
-          <meta name="description" content="Novac is a digital transformation company with strong expertise in cloud solutions services in financial, insurance, retail, and learning solutions, etc." />
+          {/* <title>VirtualSysTech: Digital Transformation Company, Cloud Solutions Company</title> */}
+          <meta name="description" content="Virtual Sys is a digital transformation company with strong expertise in cloud solutions services in financial, insurance, retail, and learning solutions, etc." />
           <link rel="shortcut icon" href="/favicon.ico" />
        
       </Head>

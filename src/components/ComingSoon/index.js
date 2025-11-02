@@ -57,7 +57,7 @@ const ComingSoon = ({ props }) => {
                 src={Assets.coming_soonN}
                 fill
                 sizes="(max-width: 768px) 100vw"
-                alt="Novac"
+                alt="Virtual Sys"
                 priority={true}
               />
             </figure>
@@ -106,7 +106,7 @@ const ComingSoon = ({ props }) => {
                   size={20}
                 />
               </div>
-              <Link href="mailto:info@novactech.in">info@novactech.in</Link>
+              <Link href="mailto:info@virtualsys.tech">info@virtualsys.tech</Link>
             </div>
 
 
