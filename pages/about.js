@@ -5,10 +5,11 @@ import { headerFooterData } from "../src/data/headerFooterData";
 
 const AboutPage = ({ data, menu }) => {
   // Structured Data JSON-LD for better SEO
-  const structuredData = {
+  const organizationData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Virtual Sys Technologies",
+    "alternateName": "Virtual Sys",
     "url": "https://www.virtualsys.tech",
     "logo": "https://www.virtualsys.tech/images/logo.png",
     "description": "Leading offshore development company with 17+ years of experience providing dedicated development teams for web design, custom applications, e-commerce solutions, and cloud hosting.",
@@ -27,11 +28,67 @@ const AboutPage = ({ data, menu }) => {
       "@type": "ContactPoint",
       "telephone": "+91-XXXXXXXXXX",
       "contactType": "Customer Service",
-      "email": "info@virtualsys.tech"
+      "email": "info@virtualsys.tech",
+      "availableLanguage": ["en", "hi"]
     },
     "sameAs": [
       "https://twitter.com/virtualsys",
       "https://www.linkedin.com/company/virtualsys"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    }
+  };
+
+  const aboutPageData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us | Virtual Sys Technologies",
+    "description": "Learn about Virtual Sys Technologies - a leading offshore development company with 17+ years of experience. We provide dedicated development teams, web design, custom applications, and cloud hosting services.",
+    "url": "https://www.virtualsys.tech/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Virtual Sys Technologies",
+      "foundingDate": "2007",
+      "description": "Virtual Sys Technologies empowers global businesses to design, build, and scale digital products through dedicated offshore development teams. For over 17 years, we've helped companies across the UAE, USA, and India accelerate their digital transformation."
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.virtualsys.tech"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://www.virtualsys.tech/about"
+        }
+      ]
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.virtualsys.tech"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://www.virtualsys.tech/about"
+      }
     ]
   };
 
@@ -54,11 +111,16 @@ const AboutPage = ({ data, menu }) => {
         <meta property="og:locale" content={aboutData.seo.metaOgLocale} />
         <meta property="og:image" content={aboutData.seo.metaOgImage.url} />
         <meta property="og:image:alt" content={aboutData.seo.metaOgImage.alt} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content={aboutData.seo.metaTwitterCard} />
         <meta name="twitter:title" content={aboutData.seo.metaTwitterTitle} />
         <meta name="twitter:description" content={aboutData.seo.metaTwitterDescription} />
+        <meta name="twitter:image" content={aboutData.seo.metaOgImage.url} />
+        <meta name="twitter:image:alt" content={aboutData.seo.metaOgImage.alt} />
         <meta name="twitter:creator" content={aboutData.seo.metaTwitterCreator} />
         <meta name="twitter:site" content={aboutData.seo.metaTwitterSite} />
 
@@ -85,7 +147,15 @@ const AboutPage = ({ data, menu }) => {
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
         />
       </Head>
 

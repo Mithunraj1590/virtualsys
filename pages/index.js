@@ -117,17 +117,22 @@ const HomePage = (props) => {
         <meta property="og:url" content={props?.data?.seo?.metaOgUrl}/>
         <meta property="og:site_name" content={props?.data?.seo?.metaOgSiteName}/>
         <meta property="og:image" content={props?.data?.seo?.metaOgImage?.url}/>
+        <meta property="og:image:alt" content={props?.data?.seo?.metaOgImage?.alt}/>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
 
         <meta name="twitter:card" content={props?.data?.seo?.metaTwitterCard}/>
         <meta name="twitter:description" content={props?.data?.seo?.metaTwitterDescription}/>
         <meta name="twitter:title" content={props?.data?.seo?.metaTwitterTitle}/>
+        <meta name="twitter:image" content={props?.data?.seo?.metaOgImage?.url}/>
+        <meta name="twitter:image:alt" content={props?.data?.seo?.metaOgImage?.alt}/>
         <meta name="twitter:creator" content={props?.data?.seo?.metaTwitterCreator}/>
         <meta name="twitter:site" content={props?.data?.seo?.metaTwitterSite}/>
 
         <meta name="robots" content={props?.data?.seo?.metaRobots}/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="canonical" href={props?.data?.seo?.canonicalURL}/>
-        <meta property="og:image:alt" content={props?.data?.seo?.metaOgImage?.alt}/>
 
         {/* Structured Data JSON-LD */}
         <script
