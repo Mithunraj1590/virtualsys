@@ -5,17 +5,17 @@ export const aboutData = {
     metaDescription: "Learn about Virtual Sys Technologies - a leading offshore development company with 17+ years of experience. We provide dedicated development teams, web design, custom applications, and cloud hosting services.",
     metaKeywords: "about Virtual Sys, offshore development company, dedicated teams, software development company, web development company, IT services, technology solutions, about us",
     metaRobots: "index, follow",
-    canonicalURL: "https://www.virtualsys.tech/about",
+    canonicalURL: "https://virtualsys.vercel.app/about",
     
     // Open Graph Meta Tags
     metaOgTitle: "About Us | Virtual Sys Technologies",
     metaOgDescription: "Learn about Virtual Sys Technologies - a leading offshore development company with 17+ years of experience providing dedicated development teams and technology solutions.",
     metaOgType: "website",
-    metaOgUrl: "https://www.virtualsys.tech/about",
+    metaOgUrl: "https://virtualsys.vercel.app/about",
     metaOgSiteName: "Virtual Sys Technologies",
     metaOgLocale: "en_US",
     metaOgImage: {
-      url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&fit=crop&crop=entropy&auto=format",
+      url: "https://virtualsys.vercel.app/images/logo-b.png",
       alt: "Virtual Sys Technologies - About Us"
     },
     

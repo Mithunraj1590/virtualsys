@@ -10,8 +10,8 @@ const AboutPage = ({ data, menu }) => {
     "@type": "Organization",
     "name": "Virtual Sys Technologies",
     "alternateName": "Virtual Sys",
-    "url": "https://www.virtualsys.tech",
-    "logo": "https://www.virtualsys.tech/images/logo.png",
+    "url": "https://virtualsys.vercel.app",
+    "logo": "https://virtualsys.vercel.app/images/logo.png",
     "description": "Leading offshore development company with 17+ years of experience providing dedicated development teams for web design, custom applications, e-commerce solutions, and cloud hosting.",
     "foundingDate": "2007",
     "numberOfEmployees": {
@@ -47,7 +47,7 @@ const AboutPage = ({ data, menu }) => {
     "@type": "AboutPage",
     "name": "About Us | Virtual Sys Technologies",
     "description": "Learn about Virtual Sys Technologies - a leading offshore development company with 17+ years of experience. We provide dedicated development teams, web design, custom applications, and cloud hosting services.",
-    "url": "https://www.virtualsys.tech/about",
+    "url": "https://virtualsys.vercel.app/about",
     "mainEntity": {
       "@type": "Organization",
       "name": "Virtual Sys Technologies",
@@ -61,13 +61,13 @@ const AboutPage = ({ data, menu }) => {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.virtualsys.tech"
+          "item": "https://virtualsys.vercel.app"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "About Us",
-          "item": "https://www.virtualsys.tech/about"
+          "item": "https://virtualsys.vercel.app/about"
         }
       ]
     }
@@ -81,13 +81,13 @@ const AboutPage = ({ data, menu }) => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.virtualsys.tech"
+        "item": "https://virtualsys.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About Us",
-        "item": "https://www.virtualsys.tech/about"
+        "item": "https://virtualsys.vercel.app/about"
       }
     ]
   };

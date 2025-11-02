@@ -5,17 +5,17 @@ export const homeData = {
     metaDescription: "Leading offshore development company providing dedicated teams for web design, custom applications, e-commerce solutions, and cloud hosting. 17+ years of expertise serving businesses globally.",
     metaKeywords: "offshore development, dedicated development teams, web design, web applications, e-commerce solutions, cloud hosting, software development, UI/UX design, digital transformation, custom software, IT outsourcing, India development teams, enterprise software, DevOps services, technology solutions",
     metaRobots: "index, follow",
-    canonicalURL: "https://www.virtualsys.tech",
+    canonicalURL: "https://virtualsys.vercel.app",
     
     // Open Graph Meta Tags
     metaOgTitle: "Virtual Sys Technologies | Offshore Development Teams & Digital Solutions",
     metaOgDescription: "Leading offshore development company providing dedicated teams for web design, custom applications, e-commerce solutions, and cloud hosting. 17+ years of expertise serving businesses globally.",
     metaOgType: "website",
-    metaOgUrl: "https://www.virtualsys.tech",
+    metaOgUrl: "https://virtualsys.vercel.app",
     metaOgSiteName: "Virtual Sys Technologies",
     metaOgLocale: "en_US",
     metaOgImage: {
-      url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&fit=crop&crop=entropy&auto=format",
+      url: "https://virtualsys.vercel.app/images/logo-b.png",
       alt: "Virtual Sys Technologies - Offshore Development Teams"
     },
     
@@ -357,8 +357,8 @@ export const homeData = {
           url: "/blog-details",
           category: "Technology",
           image: {
-            url: "/images/updates11.png",
-            alt: "Image Alt",
+            url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=1200&fit=crop&crop=entropy&auto=format",
+            alt: "Web Application Development",
             width: null,
             height: null
           },
@@ -368,8 +368,8 @@ export const homeData = {
         cards: [
           {
             image: {
-              url: "/images/news_right101.png",
-              alt: "Image Alt",
+              url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=1200&fit=crop&crop=entropy&auto=format",
+              alt: "E-Commerce Platform",
               width: null,
               height: null
             },
@@ -380,8 +380,8 @@ export const homeData = {
           },
           {
             image: {
-              url: "/images/news_right111.png",
-              alt: "Image Alt",
+              url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=1200&fit=crop&crop=entropy&auto=format",
+              alt: "Cloud Hosting",
               width: null,
               height: null
             },
@@ -392,8 +392,8 @@ export const homeData = {
           },
           {
             image: {
-              url: "/images/news_right121.png",
-              alt: "Image Alt",
+              url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=1200&fit=crop&crop=entropy&auto=format",
+              alt: "Web Design Trends",
               width: null,
               height: null
             },

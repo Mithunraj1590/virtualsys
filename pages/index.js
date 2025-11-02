@@ -9,8 +9,8 @@ const HomePage = (props) => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Virtual Sys Technologies",
-    "url": "https://www.virtualsys.tech",
-    "logo": "https://www.virtualsys.tech/images/logo.png",
+    "url": "https://virtualsys.vercel.app",
+    "logo": "https://virtualsys.vercel.app/images/logo.png",
     "description": "Leading offshore development company providing dedicated teams for web design, custom applications, e-commerce solutions, and cloud hosting.",
     "address": {
       "@type": "PostalAddress",
